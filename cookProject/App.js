@@ -10,7 +10,7 @@ const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 function Root() {
   return (
-    <Drawer.Navigator screenOptions={{headerShown: false, }}>
+    <Drawer.Navigator>
     <Drawer.Screen name="home" component={HomePageFirsPart} />
        <Drawer.Screen name="Login" component={Login} />
        <Drawer.Screen name="SignUp" component={SignUp} />   
