@@ -6,11 +6,13 @@ import HomePageFirsPart from './Components/HOMEPAGE/HomePageFirsPart';
 import Login from './Components/LoginPage/LoginPage.js';
 import SignUp from './Components/SignUpPage/SignUpPage';
 import ForgotPassword from './Components/ForgotPasswordPage/ForgotPassPage';
+import { Provider } from 'react-redux';
+import { store } from './Redux/Slices/Store';
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 function Root() {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator screenOptions={{headerShown: false, }}>
     <Drawer.Screen name="home" component={HomePageFirsPart} />
        <Drawer.Screen name="Login" component={Login} />
        <Drawer.Screen name="SignUp" component={SignUp} />   
@@ -20,6 +22,7 @@ function Root() {
 const App = () =>{
   return (
     <>
+  <Provider store={store}>
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false, }}>
         <Stack.Screen
@@ -30,7 +33,7 @@ const App = () =>{
         <Stack.Screen name="forgotPassword" component={ForgotPassword} />
       </Stack.Navigator>
     </NavigationContainer>
-   
+    </Provider>
     
     
     

@@ -8,7 +8,7 @@ import { DataforInputs } from "../DataForInputs"
 import { MyInput } from "../Inputs";
 import ButtomText from "./ButtomLinks";
 const SignupSchema = Yup.object().shape({
-    name: Yup.string()
+    username: Yup.string()
       .min(2, 'Too Short!')
       .max(50, 'Too Long!')
       .required('Required'),
@@ -16,6 +16,8 @@ const SignupSchema = Yup.object().shape({
       .min(2, 'Too Short!')
       .max(50, 'Too Long!')
       .required('Required'),
+      //email: Yup.email()
+    
   });
 const SignUp = () =>{
     return(
@@ -41,7 +43,7 @@ const SignUp = () =>{
                 Create an account to continue!
             </Text>
         <Formik
-        initialValues={{name: '', password: '', email: '', phonenumber: '', confirmpassword: ''}}
+        initialValues={{username: '', password: '', email: '', phonenumber: '', confirmpassword: ''}}
         validationSchema={SignupSchema}
         onSubmit={(values) =>{
             console.log(values);
@@ -55,18 +57,25 @@ const SignUp = () =>{
             style={StlesSignUp.inputView}
            >
             {DataSignUpPage.map((item)=>(
+             
                 <MyInput
-                name={item.name}
-                title="LOGIN"
-                value={props.values[item.value]}
-                handleSubmit={props.handleSubmit}
-
-                />
+                    name={item.name}
+                    value={props.values[item.value]}
+                    onChangeText={props.handleChange(item.name)}
+                    error={props.errors[item.name]}
+                    touched = {props.touched[item.name]}
+              />
+  
             ))}
          </View>   
         <TouchableOpacity
         style={StlesSignUp.button}
-                >
+        onPress={()=>{
+        
+                props.handleSubmit()
+        }
+
+    }>
                     <Text
                     style={StlesSignUp.btnText}
                     >Sign Up</Text>

@@ -1,7 +1,7 @@
 export const DataSignUpPage = [
     {
         id:1,
-        name: "Username",
+        name: "username",
         value: "username"
     },
 
@@ -12,17 +12,17 @@ export const DataSignUpPage = [
     },
     {
         id:3,
-        name: "Email",
+        name: "email",
         value: "email"
     },
     {
         id: 4,
-        name: "Phone Number",
+        name: "phonenumber",
         value: "phonenumber"
     },
     {
         id:5,
-        name: "Confirm Password",
+        name: "confirmpassword",
         value: "confirmpassword"
     }
 ]

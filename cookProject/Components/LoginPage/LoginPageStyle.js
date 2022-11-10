@@ -32,7 +32,8 @@ export const StylesLogin = StyleSheet.create({
         backgroundColor: Colors.gray,
         borderBottomColor: Colors.borderColor,
         borderBottomWidth: 1.5,
-        margin: 15,
+        fontSize: 18
+        // margin: 12,
     },
     button:{
         marginTop:20,
