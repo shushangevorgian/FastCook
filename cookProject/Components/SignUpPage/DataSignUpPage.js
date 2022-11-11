@@ -2,13 +2,17 @@ export const DataSignUpPage = [
     {
         id:1,
         name: "username",
-        value: "username"
+        value: "username",
+        type: "text"
     },
 
     {
         id: 2,
         name: "password",
-        value: "password"
+        value: "password",
+        type: "password"
+
+
     },
     {
         id:3,

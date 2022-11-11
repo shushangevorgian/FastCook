@@ -35,6 +35,7 @@ const Login = () => {
             validationSchema={SignupSchema}
             onSubmit={values => {
               console.log(values);
+              // dispatch(LoginPage(values))
              
             }}>
 
@@ -56,7 +57,7 @@ const Login = () => {
                   onPress={() => {
                     props.handleSubmit()
     
-                    // dispatch(LoginPage())
+                    
                    // navigation.navigate("forgotPassword")
 
                   }}

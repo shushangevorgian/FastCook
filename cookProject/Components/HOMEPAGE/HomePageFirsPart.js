@@ -1,11 +1,10 @@
 import {Text, TouchableOpacity, View, ImageBackground} from "react-native"
 import { Styles } from "../Styles/HomePageFirstPart";
-import { NavigationContainer } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import Texts from "./Texts";
 
 const HomePageFirsPart = () =>{
-    //const navigate = useNavigation()
+    const navigation = useNavigation()
     return (
         <>
     <ImageBackground
@@ -18,8 +17,11 @@ const HomePageFirsPart = () =>{
             </View>
             
             <TouchableOpacity
+            onPress= {() =>{
+                navigation.navigate('loggedInHomePage')
+            }}
             style={Styles.button}>
-                <Text
+                   <Text
                 style={Styles.buttonText}
                 >Let's start</Text>
             </TouchableOpacity>

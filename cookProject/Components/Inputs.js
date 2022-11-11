@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, TextInput, View, Text} from 'react-native';
 import {StylesLogin} from './LoginPage/LoginPageStyle';
-export const MyInput = ({name, onChangeText, value, error, touched}) => {
+export const MyInput = ({name, onChangeText, value, error, touched, type}) => {
   return (
     <View
     style={{
@@ -20,6 +20,7 @@ export const MyInput = ({name, onChangeText, value, error, touched}) => {
       name={name}
       id={name}
       placeholder={name}
+      type={type}
       />
       
      </View>

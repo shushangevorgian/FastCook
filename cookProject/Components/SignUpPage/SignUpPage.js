@@ -1,10 +1,8 @@
 import {Text, ImageBackground, View, TouchableOpacity, Image} from "react-native"
-import { StylesLogin } from "../LoginPage/LoginPageStyle";
 import {StlesSignUp} from "./SignUpPageStyle.js"
-import { Formik, Form, Field } from 'formik';
+import { Formik} from 'formik';
 import * as Yup from "yup";
 import { DataSignUpPage } from "./DataSignUpPage";
-import { DataforInputs } from "../DataForInputs"
 import { MyInput } from "../Inputs";
 import ButtomText from "./ButtomLinks";
 const SignupSchema = Yup.object().shape({
@@ -64,6 +62,7 @@ const SignUp = () =>{
                     onChangeText={props.handleChange(item.name)}
                     error={props.errors[item.name]}
                     touched = {props.touched[item.name]}
+                    type = {props.values[item.type]}
               />
   
             ))}

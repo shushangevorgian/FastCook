@@ -8,11 +8,14 @@ import SignUp from './Components/SignUpPage/SignUpPage';
 import ForgotPassword from './Components/ForgotPasswordPage/ForgotPassPage';
 import { Provider } from 'react-redux';
 import { store } from './Redux/Slices/Store';
+
+import ConfirmPass from './Components/ForgotPasswordPage/ConfirmPass';
+import LoggedInHomePage from './Components/HOMEPAGE/HomePageLoggedIn';
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 function Root() {
   return (
-    <Drawer.Navigator screenOptions={{headerShown: false, }}>
+    <Drawer.Navigator screenOptions={{headerShown: false, }} >
     <Drawer.Screen name="home" component={HomePageFirsPart} />
        <Drawer.Screen name="Login" component={Login} />
        <Drawer.Screen name="SignUp" component={SignUp} />   
@@ -28,9 +31,12 @@ const App = () =>{
         <Stack.Screen
           name="Root"
           component={Root}
-          options={{ headerShown: false }}
+          options={{ headerShown: false,}}
+
         />
         <Stack.Screen name="forgotPassword" component={ForgotPassword} />
+        <Stack.Screen name="confirmPass" component={ConfirmPass} />
+        <Stack.Screen name="loggedInHomePage" component={LoggedInHomePage}/>
       </Stack.Navigator>
     </NavigationContainer>
     </Provider>

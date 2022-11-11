@@ -37,9 +37,9 @@ export const Styles  = StyleSheet.create({
 
     },
     button:{
-        
-        paddingHorizontal: 90,
-        paddingVertical: 12,
+        height:50,
+        width:300,
+        alignSelf: "center", 
         borderRadius: 20,
         justifyContent: "center",
         alignContent: "center",
@@ -50,8 +50,9 @@ export const Styles  = StyleSheet.create({
 },
 
 buttonText:{
-    fontSize: 16,
-    color: Colors.black
+    fontSize: 20,
+    color: Colors.black,
+    textAlign: "center"
 }
 
 })
