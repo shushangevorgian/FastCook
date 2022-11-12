@@ -27,12 +27,13 @@ export const StylesLogin = StyleSheet.create({
 
     },
     inputField:{
-        height: 40,
-        width:300,
+        // height: 40,
+        // width:300,
         backgroundColor: Colors.gray,
         borderBottomColor: Colors.borderColor,
-        borderBottomWidth: 1.5,
-        fontSize: 18
+        // borderBottomWidth: 2,
+        fontSize: 18,
+    
         // margin: 12,
     },
     button:{

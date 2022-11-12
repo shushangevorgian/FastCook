@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 import { Colors } from "../Colors";
 export const ConfirmStyles = StyleSheet.create({
     container:{
-        backgroundColor: Colors.white,
+
+        backgroundColor: Colors.gray,
         flex: 1,
         alignContent: "center",
     
@@ -52,5 +53,21 @@ export const ConfirmStyles = StyleSheet.create({
         justifyContent: "center",
         alignSelf: "center"
     },
+
+    createContainer:{
+        marginTop: 100,
+        margin: 30,
+        height: 300,
+        
+    },
+    inputsView:{
+        margin:10
+    },
+    titleText:{
+        textAlign: "center",
+        fontSize: 25,
+        fontWeight: "bold"
+
+    }
     
 })

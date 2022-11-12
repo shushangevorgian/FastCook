@@ -49,6 +49,9 @@ const Login = () => {
                       onChangeText={props.handleChange(item.name)}
                       error={props.errors[item.name]}
                       touched = {props.touched[item.name]}
+                      icon={item.icon}
+                      placeholderTextColor={"white"}
+                      // autoComplete={item.autoComplete}
                     />
                   
                   ))}

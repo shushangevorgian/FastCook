@@ -60,9 +60,9 @@ export const StlesSignUp = StyleSheet.create({
         alignSelf: "center"
     },
     inputView:{
-        alignContent:"center",
-        justifyContent:"center",
-        alignSelf: "center"
+        backgroundColor: Colors.gray,
+        borderBottomColor: Colors.borderColor,
+        margin: 8
     },
     textView:{
         margin:2,

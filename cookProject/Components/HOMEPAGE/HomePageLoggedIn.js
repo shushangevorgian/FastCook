@@ -1,8 +1,13 @@
 import { Text } from "react-native"
-
+import HeaderPart from "./HeaderPart"
+import SearchPart from "./SearchPart"
 const LoggedInHomePage = () =>{
     return(
-        <Text>hello</Text>
+        <>
+        <HeaderPart/>
+        <Text>What do you whant to cook today?</Text>
+        <SearchPart/>
+        </>
     )
 }
 

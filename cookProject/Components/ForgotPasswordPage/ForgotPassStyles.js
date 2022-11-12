@@ -25,9 +25,9 @@ export const ForgotPassStyles = StyleSheet.create({
         color: Colors.lightGray
     },
     inputView:{
-        justifyContent: "center",
-        alignContent: "center",
-        alignSelf: "center",
+        margin: 15,
+        backgroundColor: Colors.gray,
+        borderBottomColor: Colors.borderColor,
         marginTop: 10
     },
     btn:{

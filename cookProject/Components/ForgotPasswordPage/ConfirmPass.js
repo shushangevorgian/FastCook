@@ -30,7 +30,7 @@ const ConfirmPass = () => {
         
         <TouchableOpacity
         onPress={()=>{
-            navigation.navigate("Login")
+            navigation.navigate("createNewPass")
         }}
         style={ConfirmStyles.btnView}
         >

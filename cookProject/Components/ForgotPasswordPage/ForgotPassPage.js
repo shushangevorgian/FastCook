@@ -3,6 +3,7 @@ import Texts from "./Texts"
 import { ForgotPassStyles } from "./ForgotPassStyles"
 import { useNavigation } from "@react-navigation/native"
 import { MyInput } from "../Inputs"
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 const  ForgotPassword = () =>{
     const navigation = useNavigation()
     return(
@@ -14,7 +15,10 @@ const  ForgotPassword = () =>{
             <Texts/>
             </View>
             <View style={ForgotPassStyles.inputView}>
-                <MyInput/>
+                <MyInput
+                icon = {<Icon name="email-outline" size={30} color="gray" />}
+                placeholder={"Enter your email"}
+                />
             </View>
             <TouchableOpacity
             style={ForgotPassStyles.btn}

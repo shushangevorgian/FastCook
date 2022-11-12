@@ -63,6 +63,8 @@ const SignUp = () =>{
                     error={props.errors[item.name]}
                     touched = {props.touched[item.name]}
                     type = {props.values[item.type]}
+                    placeholderTextColor={"gray"}
+                    icon={item.icon}
               />
   
             ))}
