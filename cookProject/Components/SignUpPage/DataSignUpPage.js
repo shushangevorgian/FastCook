@@ -7,6 +7,7 @@ export const DataSignUpPage = [
         value: "username",
         type: "text",
         icon: <Icons name="user" size={30} color="gray"/>,
+        placeholder: "Username"
     },
 
     {
@@ -14,25 +15,33 @@ export const DataSignUpPage = [
         name: "password",
         value: "password",
         type: "password",
+        placeholder: "Password",
         icon: <Icons name="lock" size={30} color="gray"/>,
+        secureTextEntry: true,
+        
 
     },
     {
         id:3,
         name: "email",
         value: "email",
-        icon: <Icon name="email-outline" size={30} color="gray"/>
+        icon: <Icon name="email-outline" size={30} color="gray"/>,
+        placeholder: "Email"
     },
     {
         id: 4,
         name: "phonenumber",
         value: "phonenumber",
-        icon: <Icons name="phone" size={30} color="gray" />
+        icon: <Icons name="phone" size={30} color="gray" />,
+        placeholder: "Phone Number"
     },
     {
         id:5,
-        name: "confirm password",
+        name: "confirmpassword",
         value: "confirmpassword",
+        placeholder: "Confirm Password",
         icon: <Icons name="lock" size={30} color="gray"/>,
+        secureTextEntry: true,
+        
     }
 ]

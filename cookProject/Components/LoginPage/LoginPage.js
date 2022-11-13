@@ -7,8 +7,7 @@ import { useDispatch } from 'react-redux';
 import ButtomText from './ButtomLinks';
 import {DataforInputs} from '../DataForInputs';
 import {MyInput} from '../Inputs';
-import { LoginPage } from '../../Redux/Slices/UserSlice';
-// import { useNavigation } from "@react-navigation/native";
+//import { LoginPage } from '../../Redux/Slices/UserSlice';
 const SignupSchema = Yup.object().shape({
   username: Yup.string()
     .min(2, 'Too Short!')
@@ -21,7 +20,7 @@ const SignupSchema = Yup.object().shape({
     .required(' password Required'),
 });
 const Login = () => {
-  const dispatch = useDispatch()
+  //const dispatch = useDispatch()
   const navigation = useNavigation()
   return (
     <>
@@ -50,8 +49,9 @@ const Login = () => {
                       error={props.errors[item.name]}
                       touched = {props.touched[item.name]}
                       icon={item.icon}
+                      placeholder={item.placeholder}
                       placeholderTextColor={"white"}
-                      // autoComplete={item.autoComplete}
+                      secureTextEntry={item.secureTextEntry}
                     />
                   
                   ))}
@@ -61,7 +61,7 @@ const Login = () => {
                     props.handleSubmit()
     
                     
-                   // navigation.navigate("forgotPassword")
+                   navigation.navigate("loggedInHomePage")
 
                   }}
                   style={StylesLogin.button}>

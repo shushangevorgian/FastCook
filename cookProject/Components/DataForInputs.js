@@ -6,7 +6,8 @@ export const DataforInputs = [
         name:"username",
         value: "username",
         icon: <Icon name="user" size={30} color="white"/>,
-        autoComplete: "name"
+        placeholder: "Username"
+        
        
 
     },
@@ -15,7 +16,8 @@ export const DataforInputs = [
         name:"password",
         value: "password",
         icon: <Icon name="lock" size={30} color="white"/>,
-        autoComplete:"password"
+        secureTextEntry: true,
+        placeholder: "Password"
         
     },
 

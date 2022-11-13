@@ -3,8 +3,10 @@ import {StlesSignUp} from "./SignUpPageStyle.js"
 import { Formik} from 'formik';
 import * as Yup from "yup";
 import { DataSignUpPage } from "./DataSignUpPage";
+import { useDispatch } from "react-redux";
 import { MyInput } from "../Inputs";
 import ButtomText from "./ButtomLinks";
+import { SignUpPage } from "../../Redux/Slices/UserAstyncThunks.js";
 const SignupSchema = Yup.object().shape({
     username: Yup.string()
       .min(2, 'Too Short!')
@@ -14,10 +16,21 @@ const SignupSchema = Yup.object().shape({
       .min(2, 'Too Short!')
       .max(50, 'Too Long!')
       .required('Required'),
-      //email: Yup.email()
-    
+      email: Yup.string()
+      .email("")
+      .required('Required valid email'),
+      phonenumber: Yup.number()
+      .min(5, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+      confirmpassword: Yup.string()
+      .required('Required')
+      .oneOf([Yup.ref('password')])
+
+
   });
 const SignUp = () =>{
+    const dispatch =useDispatch()
     return(
         <>
         
@@ -45,6 +58,7 @@ const SignUp = () =>{
         validationSchema={SignupSchema}
         onSubmit={(values) =>{
             console.log(values);
+            //dispatch(SignUpPage(valus))
         }}
 
 
@@ -64,7 +78,9 @@ const SignUp = () =>{
                     touched = {props.touched[item.name]}
                     type = {props.values[item.type]}
                     placeholderTextColor={"gray"}
+                    placeholder={item.placeholder}
                     icon={item.icon}
+                    secureTextEntry= {item.secureTextEntry}
               />
   
             ))}
