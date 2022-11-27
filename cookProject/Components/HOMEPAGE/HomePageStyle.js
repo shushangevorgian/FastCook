@@ -4,6 +4,7 @@ export const HomePageStyle = StyleSheet.create({
     container:{
         flexDirection: "row",
             //backgroundColor: "red",
+            margin:5,
             justifyContent: "space-between",
             paddingHorizontal: 10,
             height: 60,

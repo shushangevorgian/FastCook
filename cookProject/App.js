@@ -8,11 +8,13 @@ import SignUp from './Components/SignUpPage/SignUpPage';
 import ForgotPassword from './Components/ForgotPasswordPage/ForgotPassPage';
 import { Provider } from 'react-redux';
 import { store } from './Redux/Slices/Store';
-import Icon from "react-native-vector-icons/MaterialIcons"
+import Ionicons from 'react-native-vector-icons/Ionicons'
 import ConfirmPass from './Components/ForgotPasswordPage/ConfirmPass';
 import LoggedInHomePage from './Components/HOMEPAGE/HomePageLoggedIn';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CreateNewPass from './Components/ForgotPasswordPage/CreateNewPass';
+import SavePage from './Components/SavePage/Save';
+import Profile from './Components/PofilePage/Profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,15 +25,41 @@ const Stack = createStackNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-    screenOptions={{
-    headerShown: false,
+      screenOptions={({ route }) => ({
+      headerShown: false,
       tabBarStyle: { position: 'absolute',
-                      margin: 10,
+                      margin: 5,
                       justifyContent: "space-between",
       },
-    }}>
-      <Tab.Screen name="Home" component={LoggedInHomePage} />
-      {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+
+        if (route.name === 'Home') {
+          iconName = focused
+            //'<ion-icon name="home-outline"></ion-icon>'
+            //<ion-icon name="person-outline"></ion-icon>
+            ? 'ios-information-circle'
+            : 'ios-information-circle-outline';
+        } else if (route.name === 'Settings') {
+          iconName = focused ? 'ios-list' : 'ios-list-outline';
+        }
+        else{
+          iconName = focused ? 'ios-list' : 'ios-list-outline';
+        }
+
+
+
+        
+        return <Ionicons name={iconName} size={size} color={color} />;
+      },
+      tabBarActiveTintColor: 'tomato',
+      tabBarInactiveTintColor: 'gray',
+    })}
+   
+    >
+      <Tab.Screen name="Home" component={LoggedInHomePage}  />
+      <Tab.Screen name="Settings" component={SavePage} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 }

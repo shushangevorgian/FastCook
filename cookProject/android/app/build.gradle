@@ -137,6 +137,8 @@ def reactNativeArchitectures() {
 }
 
 android {
+    // compileSdkVersion 27
+    // buildToolsVersion "27.0.3"
     ndkVersion rootProject.ext.ndkVersion
 
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -144,6 +146,8 @@ android {
     defaultConfig {
         applicationId "com.cookproject"
         minSdkVersion rootProject.ext.minSdkVersion
+        vectorDrawables.useSupportLibrary = true
+        //targetSdkVersion 27
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
