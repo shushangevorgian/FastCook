@@ -8,6 +8,7 @@ import { MyInput } from "../Inputs"
 import { useDispatch } from "react-redux";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { ForgotPage } from "../../Redux/Slices/UserAstyncThunks";
+import { TextInput } from "react-native-gesture-handler";
 const ForgotPasswordSchema = Yup.object().shape({
     email: Yup.string()
     .email("")
@@ -33,16 +34,23 @@ const  ForgotPassword = () =>{
              //dispatch(ForgotPage(values))
              
             }}>
-            {props => (
+            {({
+                values,
+                handleChange,
+                errors,
+                touched,
+                handleSubmit
+
+            }) => (
                 <>
             <View style={ForgotPassStyles.inputView}>
+               
                 <MyInput
                 name="email"
-
-                // value={props.values("email")}
-                // onChangeText={props.handleChange(("email"))}
-                //error={props.errors("email")}
-                // touched = {props.touched("email")}
+                value= {values.email}
+                error={errors.email}
+                onChangeText={handleChange("email")}
+                touched = {touched.email}
                 icon = {<Icon name="email-outline" size={30} color="gray" />}
                 placeholder={"Enter your email"}
                 />
@@ -50,7 +58,7 @@ const  ForgotPassword = () =>{
             <TouchableOpacity
             style={ForgotPassStyles.btn}
             onPress={() =>{
-                props.handleSubmit()
+                //handleSubmit()
                 navigation.navigate('confirmPass')
             }}
             >

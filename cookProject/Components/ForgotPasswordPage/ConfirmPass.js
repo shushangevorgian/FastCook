@@ -24,7 +24,7 @@ const ConfirmPass = () => {
         >Enter verification code</Text>
         
         <TextInput
-        placeholder="* * * *"
+        placeholder="* * * * * *"
         style={ConfirmStyles.input} 
         />
         

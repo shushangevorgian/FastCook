@@ -58,7 +58,7 @@ const SignUp = () =>{
         validationSchema={SignupSchema}
         onSubmit={(values) =>{
             console.log(values);
-            //dispatch(SignUpPage(valus))
+            //dispatch(SignUpPage(values))
         }}
 
 
