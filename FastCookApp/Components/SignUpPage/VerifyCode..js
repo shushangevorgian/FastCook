@@ -26,13 +26,13 @@ const VerifyCode = () => {
 console.log(VerifyError,'Error')
   const dispatch = useDispatch()
   const navigation = useNavigation()
-  // useEffect(() => {
-  //   console.log("success");
-  //   if(VerifyError.success === true){
-  //       navigation.navigate("Login")
-  //   }
+  useEffect(() => {
+    console.log("success");
+    if(VerifyError.success === true){
+        navigation.navigate("Login")
+    }
   
-  // },[VerifyError.success])
+  },[VerifyError.success])
 
   return (
     <>

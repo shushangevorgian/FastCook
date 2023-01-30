@@ -20,7 +20,7 @@ const goToImages = () =>{
       }).then(image => {
         console.log("image", image);
         setImage(image.path)
-        dispath(SetAvatar(image.path))
+        dispath(SetAvatar(image))
         
       });
 }

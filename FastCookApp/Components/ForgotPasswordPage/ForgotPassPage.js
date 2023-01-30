@@ -24,13 +24,13 @@ const  ForgotPassword = () =>{
     const ForgotError = useSelector(state => state.forgot)
     const dispatch = useDispatch()
     const navigation = useNavigation()
-    // useEffect(() => {
-    //     console.log("success");
-    //     if(ForgotError.successForgot === true){
-    //         navigation.navigate('confirmPass')
-    //     }
+    useEffect(() => {
+        console.log("success");
+        if(ForgotError.successForgot === true){
+            navigation.navigate('confirmPass')
+        }
       
-    //   },[ForgotError.successForgot])
+      },[ForgotError.successForgot])
     return(
         <View
         style={ForgotPassStyles.backgroundView}>
@@ -68,7 +68,7 @@ const  ForgotPassword = () =>{
                 <TouchableOpacity
                   onPress={() => {
                     props.handleSubmit()
-                    navigation.navigate('confirmPass')
+                    // navigation.navigate('confirmPass')
                     }}
                   style={StylesLogin.button}>
                   <Text style={StylesLogin.btnText}>SEND</Text>

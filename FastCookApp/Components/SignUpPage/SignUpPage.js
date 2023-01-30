@@ -39,13 +39,13 @@ const SignupSchema = Yup.object().shape({
 const SignUp = () =>{
     const SignUpError = useSelector(state => state.user) 
     const navigation = useNavigation()
-    // useEffect(() => {
-    //   console.log("success");
-    //   if(SignUpError.success === true){
-    //       navigation.navigate("verifyCode")
-    //   }
+    useEffect(() => {
+      console.log("success");
+      if(SignUpError.success === true){
+          navigation.navigate("verifyCode")
+      }
     
-    // },[SignUpError.success])
+    },[SignUpError.success])
     const dispatch =useDispatch()
     return(
         <>
