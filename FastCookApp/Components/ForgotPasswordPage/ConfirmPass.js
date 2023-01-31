@@ -1,4 +1,4 @@
-import React from  "react";
+import React, { useState } from  "react";
 import { View, TextInput, TouchableOpacity, Text, Image} from "react-native";
 import { ConfirmStyles } from "./ConfirmPasswordStyles";
 import { useNavigation } from "@react-navigation/native";
@@ -17,17 +17,20 @@ const ConfirmPasswordSchema = Yup.object().shape({
     
   });
 const ConfirmPass = () => {
+  const {tokenn, setToken} = useState('')
     const navigation = useNavigation()
     const dispatch = useDispatch()
     const ConfirmError = useSelector(state => state.forgotConfirm)
-    // useEffect(() => {
-    //     console.log("success");
-    //     if(ConfirmError.successConfirm === true){
-    //         navigation.navigate("createNewPass")
-    //     }
+    useEffect(() => {
+        console.log("success");
+        if(ConfirmError.successConfirm === true){
+            navigation.navigate("createNewPass",{
+              token: tokenn
+            })
+        }
       
-    //   },[ConfirmError.successConfirm])
-   
+      },[ConfirmError.successConfirm])
+      
     return(
         <View
         style={ConfirmStyles.container}
@@ -53,9 +56,12 @@ const ConfirmPass = () => {
             onSubmit={(values) => {
               console.log("tokVals",values);
               dispatch(ConfirmForgotCode(values))
+              setToken(values.token.token)
+              console.log( "setToken", tokenn)
+              
              
             }}>
-
+         
             {props => (
               <>
                 <View>
@@ -77,7 +83,7 @@ const ConfirmPass = () => {
                 <TouchableOpacity
                   onPress={() => {
                     props.handleSubmit()
-                    navigation.navigate("createNewPass")
+                    // navigation.navigate("createNewPass")
                     }}
                   style={StylesLogin.button}>
                   <Text style={StylesLogin.btnText}>Confirm</Text>

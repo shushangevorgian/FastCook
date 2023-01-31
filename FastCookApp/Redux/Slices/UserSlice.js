@@ -32,22 +32,9 @@ export const UserSlice = createSlice({
             state.loading = false,
             state.error = action.error.message
             state.success = false
-            sate.messages= action.error.messages
+            state.messages= action.error.messages
         },
-        [SignUpPage.pending]: (state, action)=>{
-            state.loading = true
-            state.error = action.error
-        },
-        [SignUpPage.fulfilled]: (state, action)=>{
-            state.loading = false
-            //state.user = action.payload
-            state.success = true
-        },
-        [SignUpPage.rejected]: (state, action) =>{
-            state.loading = false,
-            state.errorUsername = action.error.messages
-            state.success = false
-        },
+       
         [CheckCodeVerify.pending]: (state, action) =>{
             state.loading=true,
             state.error = action.error

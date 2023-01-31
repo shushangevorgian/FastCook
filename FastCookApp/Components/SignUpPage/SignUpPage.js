@@ -37,7 +37,7 @@ const SignupSchema = Yup.object().shape({
 
   });
 const SignUp = () =>{
-    const SignUpError = useSelector(state => state.user) 
+    const SignUpError = useSelector(state => state.signUp) 
     const navigation = useNavigation()
     useEffect(() => {
       console.log("success");
@@ -46,7 +46,8 @@ const SignUp = () =>{
       }
     
     },[SignUpError.success])
-    const dispatch =useDispatch()
+
+    const dispatch = useDispatch()
     return(
         <>
         
@@ -108,12 +109,8 @@ const SignUp = () =>{
         onPress={()=>{
             console.log("ok")
             props.handleSubmit()
-            //navigation.navigate('verifyCode')
-            //     {
-            //     if(props.handleSubmit()){
-            //     navigation.navigate('verifyCode')
-            //     }
-            // }
+            
+        
         }
 
     }>
@@ -129,7 +126,7 @@ const SignUp = () =>{
                 fontWeight: "bold",
                   textAlign: "center",
                   color: "red",
-                  fontSize: 15
+                  fontSize: 30
                 }}> {SignUpError?.error}</Text>
                  </View>
 </>

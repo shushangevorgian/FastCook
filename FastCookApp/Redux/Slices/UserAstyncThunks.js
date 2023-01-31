@@ -32,7 +32,7 @@ export const LoginPage = createAsyncThunk('user', async function (data) {
   }
 });
 
-export const SignUpPage = createAsyncThunk('user', async function (data) {
+export const SignUpPage = createAsyncThunk('SignUp', async function (data) {
   console.log('SIGNNNNNN');
   try {
     const response = await SignUpRequest({
@@ -47,16 +47,13 @@ export const SignUpPage = createAsyncThunk('user', async function (data) {
       SetDataSignUp(userData);
     }
   } catch (error) {
-    // const username = JSON.stringify(error.response.data.messages).map(it=>console.log(it))
-    // console.log(error.response.data.messages);
-
-    return Promise.reject(JSON.stringify(error.response.data.messages));
-
-    // console.log("CATCH ERR", err);
+    // return Promise.reject(JSON.stringify(error.response.data.messages));
+    return Promise.reject("error");
+  
   }
 });
 
-export const CheckCodeVerify = createAsyncThunk('user', async function (data) {
+export const CheckCodeVerify = createAsyncThunk('SignVerify', async function (data) {
   console.log('Verifyyy', data);
   try {
     const response = await VaerifyCodRequest({token: data.token});
@@ -66,7 +63,7 @@ export const CheckCodeVerify = createAsyncThunk('user', async function (data) {
   }
 });
 
-export const ForgotPage = createAsyncThunk('user', async function (data) {
+export const ForgotPage = createAsyncThunk('forgot', async function (data) {
   try {
     const response = await forgotPassRequest({email: data.email});
     const userData = response?.data;
@@ -81,7 +78,7 @@ export const ForgotPage = createAsyncThunk('user', async function (data) {
 });
 
 export const ConfirmForgotCode = createAsyncThunk(
-  'user',
+  'forgotConfirm',
   async function (data) {
     console.log('confirm cod for passsword');
     try {
@@ -98,16 +95,16 @@ export const ConfirmForgotCode = createAsyncThunk(
   },
 );
 ///////////////?????????????
-export const CreateNewPassLogin = createAsyncThunk(
-  'user',
-  async function (data) {
+export const CreateNewPassLogin = createAsyncThunk('createPass', async function (token, {data}) {
     console.log(data, 'createeee');
     try {
-      const response = await createNewPassRequest({password: data.password});
-      // return{
-      //     data: response.data
-      // }
-      console.log(response.data, 'resss');
+      const response = await createNewPassRequest( token, {password: data.password});
+      return {
+        data: {
+            password: response.data.password
+        }
+    }
+      
     } catch (error) {
       return Promise.reject(error.response.data.message);
     }

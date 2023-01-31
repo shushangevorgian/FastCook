@@ -1,5 +1,4 @@
 import {StyleSheet, Text, View, SafeAreaView, FlatList} from 'react-native';
-import Carousel from 'react-native-snap-carousel';
 const Data = [
   {
     id: 1,
@@ -31,15 +30,8 @@ const ShowPicktures = () => {
           flexDirection: 'row',
           justifyContent: 'center',
         }}>
-        <Carousel
-          layout={'default'}
-          data={Data}
-          //horizontal= {true}
-          sliderWidth={300}
-          itemWith={300}
-          renderItem={renderItem}
-        />
-        {/* <FlatList
+      
+        <FlatList
       
         layout={"default"}
         data={Data}
@@ -49,7 +41,7 @@ const ShowPicktures = () => {
         renderItem={renderItem}
         
         
-        /> */}
+        />
       </View>
     </SafeAreaView>
   );

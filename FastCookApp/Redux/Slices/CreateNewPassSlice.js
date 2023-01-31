@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { CreateNewPassLogin } from './UserAstyncThunks';
 const initialState = {
-    forgotpassdata: {},
     loading: true,
     success:false,
     error: ' ',

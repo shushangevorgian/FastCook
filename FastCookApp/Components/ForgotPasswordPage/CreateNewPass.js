@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import { DataNewPass } from "./DataCreateNewPass"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { useRoute } from "@react-navigation/native";
 import { CreateNewPassLogin } from "../../Redux/Slices/UserAstyncThunks";
 const CreateNewPassSchema = Yup.object().shape({
   password: Yup.string()
@@ -15,16 +16,18 @@ const CreateNewPassSchema = Yup.object().shape({
     // .required("this field is required")
   });
 const CreateNewPass = () =>{
+  const route = useRoute()
+  const {token} = route.params
     const CreateNewPassError = useSelector(state =>state.createPass)
     const navigation = useNavigation()
     const dispatch = useDispatch()
-    // useEffect(() => {
-    //   console.log("success");
-    //   if(CreateNewPassError.success === true){
-    //       navigation.navigate("Login")
-    //   }
+    useEffect(() => {
+      console.log("success");
+      if(CreateNewPassError.success === true){
+          navigation.navigate("Login")
+      }
     
-    // },[CreateNewPassError.success])
+    },[CreateNewPassError.success])
     return(
         <View style={ConfirmStyles.createContainer}>
             <Formik
@@ -32,7 +35,7 @@ const CreateNewPass = () =>{
             validationSchema={CreateNewPassSchema}
             onSubmit={(values) => {
               console.log("tokVals",values);
-              dispatch(CreateNewPassLogin(values))
+              dispatch(CreateNewPassLogin(token, values))
              
             }}>
 

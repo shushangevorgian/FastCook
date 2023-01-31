@@ -68,7 +68,7 @@ const  ForgotPassword = () =>{
                 <TouchableOpacity
                   onPress={() => {
                     props.handleSubmit()
-                    // navigation.navigate('confirmPass')
+                   
                     }}
                   style={StylesLogin.button}>
                   <Text style={StylesLogin.btnText}>SEND</Text>

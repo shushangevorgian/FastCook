@@ -8,6 +8,6 @@ export const forgotConfirmRequest = data => {
 };
 
 export const createNewPassRequest = (token, data) => {
-  console.log('passssssssssss', token);
+  console.log('pasToken', token);
   return instanseLogin.post(`/user/reset_password?token=${token}`, data);
 };

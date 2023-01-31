@@ -2,7 +2,6 @@ import {createSlice} from '@reduxjs/toolkit';
 import {ConfirmForgotCode} from './UserAstyncThunks';
 
 const initialState = {
-  forgotpassdata: {},
   loading: true,
   successConfirm: false,
   error: ' ',
