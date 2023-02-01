@@ -17,6 +17,7 @@ import SavePage from './Components/SavePage/Save';
 import Profile from './Components/PofilePage/Profile';
 import AddRecipe from "./Components/AddRecipe/AddRecipe.js";
 import VerifyCode from './Components/SignUpPage/VerifyCode.';
+import ShowEachPage from './Components/HOMEPAGE/ShowEachRecipe';
 const Tab = createBottomTabNavigator();
 
 const Drawer = createDrawerNavigator();
@@ -95,6 +96,7 @@ const App = () =>{
         <Stack.Screen  name= "createNewPass"  component= {CreateNewPass}/>
         <Stack.Screen name='addRecipe' component={AddRecipe} />
         <Stack.Screen name='verifyCode' component={VerifyCode} />
+        <Stack.Screen name = 'showEachPage' component={ShowEachPage}/>
       </Stack.Navigator>
     </NavigationContainer>
     </Provider>

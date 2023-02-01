@@ -1,27 +1,32 @@
-import {StyleSheet, Text, View, SafeAreaView, FlatList} from 'react-native';
-const Data = [
-  {
-    id: 1,
-    title: 'firstPickture',
-  },
-  {
-    id: 2,
-    title: 'SecondPickture',
-  },
-  {
-    id: 3,
-    title: 'ThirdPickture',
-  },
-];
+import {StyleSheet, Text, View, SafeAreaView, FlatList, TouchableOpacity,Image} from 'react-native';
+import { TrendListdata } from './DataTrendList';
+import {Colors} from "../Colors"
+import { useNavigation } from '@react-navigation/native';
 
-const Item = ({title}) => (
+const Item = ({ image, id, body, title}) => {
+  const navigation = useNavigation()
+  return(
   <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
+   <View style={styles.imageComponent}><Text >{image}</Text></View> 
+   {/* <View style={{height: 200, width:270,}}><Image  source= {{uri: image}} style={{height: 200, width:270,}}/></View> */}
+   <Text style= {styles.title}>{title}</Text>
+   <View style={styles.btnView}><TouchableOpacity
+   onPress={() =>{
+    console.log(id)
+    navigation.navigate('showEachPage',{
+      id:id,
+      image: image,
+      body:body,
+      title:title
+    })
+   }}
+   ><Text style={styles.btnText}>Show More</Text></TouchableOpacity></View> 
   </View>
-);
+)};
 
 const ShowPicktures = () => {
-  const renderItem = ({item}) => <Item title={item.title} />;
+  
+  const renderItem = ({item}) => <Item title={item.title} image={item.image} body={item.body}  id = {item.id} />;
   return (
     <SafeAreaView style={styles.container}>
       <View
@@ -34,7 +39,7 @@ const ShowPicktures = () => {
         <FlatList
       
         layout={"default"}
-        data={Data}
+        data={TrendListdata}
         horizontal= {true}
         sliderWidth={300}
         itemWith={300}
@@ -52,15 +57,46 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   item: {
-    height: 300,
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
+    backgroundColor: Colors.backgroundGrey,
+    borderRadius: 20,
+  
+    height:500,
+    width: 300,
+    marginVertical: 15,
     marginHorizontal: 16,
   },
   title: {
-    fontSize: 32,
+    fontSize: 25,
+    alignSelf: "center"
   },
+  imageComponent:{
+    borderRadius: 30,
+    margin: 1,    
+    height: 220,
+    width:250
+    
+  },
+  bodyText: {
+    justifyContent: "center",
+    alignItem: "center",
+    alignContent: "center",
+    alignSelf: "center"
+
+  },
+  btnView:{
+    alignSelf: "center",
+    alignContent: "center",
+    alignItem: "center",
+    backgroundColor: Colors.orange,
+    padding: 20,
+    paddingHorizontal: 80,
+    borderRadius: 20,
+    marginTop: 4
+  },
+  btnText:{
+    fontSize: 16,
+    fontWeight: "bold"
+  }
 });
 
 export default ShowPicktures;
