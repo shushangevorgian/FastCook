@@ -17,8 +17,8 @@ const ConfirmPasswordSchema = Yup.object().shape({
     
   });
 const ConfirmPass = () => {
-  const {tokenn, setToken} = useState('')
-    const navigation = useNavigation()
+  const [tokenn, setToken] = useState('')
+   const navigation = useNavigation()
     const dispatch = useDispatch()
     const ConfirmError = useSelector(state => state.forgotConfirm)
     useEffect(() => {
@@ -56,8 +56,8 @@ const ConfirmPass = () => {
             onSubmit={(values) => {
               console.log("tokVals",values);
               dispatch(ConfirmForgotCode(values))
-              setToken(values.token.token)
-              console.log( "setToken", tokenn)
+              setToken(values.token);
+              // console.log( "setToken", tokenn)
               
              
             }}>

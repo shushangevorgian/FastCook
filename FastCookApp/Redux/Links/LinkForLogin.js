@@ -1,7 +1,8 @@
 import axios from 'axios';
 import {GetToken} from './AsyncStorage';
 export const instanseLogin = axios.create({
-  baseURL: 'http://34.107.8.120',
+  // baseURL: 'http://34.107.8.120',
+  baseURL: 'http://192.168.2.102:3022'
 });
 
 export const LoginRequest = data => {
@@ -26,6 +27,8 @@ instanseLogin.interceptors.request.use(
 instanseLogin.interceptors.response.use(
   response => response,
   error => {
+    // console.log(response, 'resp');
+    console.log(error, 'error intercept');
     const token = GetToken();
     if (token === null) {
       return undefined;
