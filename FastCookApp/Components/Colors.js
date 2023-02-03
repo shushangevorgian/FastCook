@@ -8,5 +8,6 @@ export const Colors = {
     borderColor: "#B9B4B1",
     LightSalmon: "#EC8100",
     lightGray: "#818181",
-    backgroundGrey: "#F7F2F0 "
+    backgroundGrey: "#F7F2F0 ",
+    boxGrey: "#E1E1E1"
 }

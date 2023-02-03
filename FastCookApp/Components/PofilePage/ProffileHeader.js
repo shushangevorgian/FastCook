@@ -2,11 +2,11 @@ import {Image, TouchableOpacity, Text, View} from "react-native"
 import ImagePicker from "react-native-image-crop-picker"
 import {ProfileStyles} from "./ProfilePageStyle.js";
 import { useNavigation } from "@react-navigation/native"
-//import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 export const ProfileHeader = () =>{
 const navigation = useNavigation()
 const logOut = () => {
-      //AsyncStorage.clear()
+      AsyncStorage.clear()
       navigation.navigate('Login')
 }
 /////add dispatch part

@@ -1,7 +1,9 @@
-import { Text, View, TouchableOpacity} from "react-native";
+import { Text, View, TouchableOpacity, ScrollView} from "react-native";
 import {ProfileStyles} from "./ProfilePageStyle.js";
 import Icon from "react-native-vector-icons/Entypo";
 import { useNavigation } from "@react-navigation/native"
+import { FlatList } from "react-native-gesture-handler";
+import { AddingRecipeLIst } from "./AddingRecipeLIst.js";
 export const Body = () => {
     const navigation = useNavigation()
     return(
@@ -33,11 +35,15 @@ export const Body = () => {
             <Text
         >
         <Icon name="circle-with-plus" size={30} color="orange"/>
+
         </Text>
         </TouchableOpacity>
+       
         </View>
 
-        
+        <ScrollView>
+            <AddingRecipeLIst/>
+        </ScrollView>
         </View>
     )
 }

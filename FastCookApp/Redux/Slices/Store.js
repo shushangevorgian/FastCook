@@ -5,6 +5,10 @@ import ForgotSlice from './ForgotSlice';
 import  CreateNewPassForLogin  from './CreateNewPassSlice';
 import AvatarSlice from './AvatarSlice';
 import SignUpSlice from './SignUpSlice';
+import TimeSlice from './TimeSlice';
+import CategorySlice from './CategorySlice';
+import IngridientCreateSlice from './IngridientSlice';
+import GetIngridientSlice from './GetIngridientSlice';
 export const store = configureStore({
     reducer:{
         user: UserSlice,
@@ -12,6 +16,11 @@ export const store = configureStore({
         forgotConfirm: ForgotConfirmSlice,
         createPass: CreateNewPassForLogin,
         avatarStore: AvatarSlice,
-        signUp: SignUpSlice
+        signUp: SignUpSlice,
+        time: TimeSlice,
+        category: CategorySlice,
+        ingridientCtreate: IngridientCreateSlice,
+        getIngrigient: GetIngridientSlice,
+        
     }
 })

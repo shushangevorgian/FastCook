@@ -18,6 +18,7 @@ import Profile from './Components/PofilePage/Profile';
 import AddRecipe from "./Components/AddRecipe/AddRecipe.js";
 import VerifyCode from './Components/SignUpPage/VerifyCode.';
 import ShowEachPage from './Components/HOMEPAGE/ShowEachRecipe';
+import { AddIngridient } from './Components/AddRecipe/AddIngridientPage';
 const Tab = createBottomTabNavigator();
 
 const Drawer = createDrawerNavigator();
@@ -97,6 +98,7 @@ const App = () =>{
         <Stack.Screen name='addRecipe' component={AddRecipe} />
         <Stack.Screen name='verifyCode' component={VerifyCode} />
         <Stack.Screen name = 'showEachPage' component={ShowEachPage}/>
+        <Stack.Screen name='addIngridient' component={AddIngridient}/>
       </Stack.Navigator>
     </NavigationContainer>
     </Provider>

@@ -14,12 +14,12 @@ import {useNavigation} from '@react-navigation/native';
 const Item = ({image, id, body, title}) => {
   const navigation = useNavigation();
   return (
+    <>
+    
     <View style={styles.item}>
-      <View style={styles.imageComponent}>
-        <Text>{image}</Text>
-      </View>
+      
       {/* <View style={{height: 200, width:270,}}><Image  source= {{uri: image}} style={{height: 200, width:270,}}/></View> */}
-      <Text style={styles.title}>{title}</Text>
+    
       <View style={styles.btnView}>
         <TouchableOpacity
           onPress={() => {
@@ -31,10 +31,13 @@ const Item = ({image, id, body, title}) => {
               title: title,
             });
           }}>
-          <Text style={styles.btnText}>Show More</Text>
+          <View style={styles.imageComponent}>
+        <Text>{image}</Text>
+      </View>
         </TouchableOpacity>
       </View>
     </View>
+    </>
   );
 };
 
@@ -43,6 +46,8 @@ const ShowPicktures = () => {
     <Item title={item.title} image={item.image} body={item.body} id={item.id} />
   );
   return (
+    <>
+    <Text>Categoris</Text>
     <SafeAreaView style={styles.container}>
       <View
         style={{
@@ -50,9 +55,10 @@ const ShowPicktures = () => {
           flexDirection: 'row',
           justifyContent: 'center',
         }}>
+          
         <FlatList
           layout={'default'}
-          data={() => renderTrendListData()}
+          data={renderTrendListData({height: 180, width: 200, borderRadius: 30})}
           horizontal={true}
           sliderWidth={300}
           itemWith={300}
@@ -60,6 +66,7 @@ const ShowPicktures = () => {
         />
       </View>
     </SafeAreaView>
+    </>
   );
 };
 
@@ -71,10 +78,10 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.backgroundGrey,
     borderRadius: 20,
 
-    height: 500,
-    width: 300,
+    height: 270,
+    width: 250,
     marginVertical: 15,
-    marginHorizontal: 16,
+    marginHorizontal: 0,
   },
   title: {
     fontSize: 25,
@@ -92,20 +99,20 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignSelf: 'center',
   },
-  btnView: {
-    alignSelf: 'center',
-    alignContent: 'center',
-    alignItem: 'center',
-    backgroundColor: Colors.orange,
-    padding: 20,
-    paddingHorizontal: 80,
-    borderRadius: 20,
-    marginTop: 4,
-  },
-  btnText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
+  // btnView: {
+  //   alignSelf: 'center',
+  //   alignContent: 'center',
+  //   alignItem: 'center',
+  //   backgroundColor: Colors.orange,
+  //   padding: 20,
+  //   paddingHorizontal: 80,
+  //   borderRadius: 20,
+  //   marginTop: 4,
+  // },
+  // btnText: {
+  //   fontSize: 16,
+  //   fontWeight: 'bold',
+  // },
 });
 
 export default ShowPicktures;
