@@ -1,10 +1,10 @@
 import { Text, TouchableOpacity, Image} from "react-native";
 import { AddRecipeStyles } from "./AddRecipeStyle"
 import ImagePicker from "react-native-image-crop-picker"
-import { useState } from "react";
+
 import {Colors} from "../Colors"
- export const AddPhoto = () =>{
-    const [image, setImage] = useState("");
+ export const AddPhoto = ({image, setImage}) =>{
+   
     const goToImages = () =>{
     console.log("opening");
         ImagePicker.openPicker({
@@ -18,7 +18,7 @@ import {Colors} from "../Colors"
         }).then(image => {
             console.log("image", image);
             setImage(image.path)
-            // dispath(SetAvatar(image))
+            
             
         });
     }
@@ -43,7 +43,7 @@ import {Colors} from "../Colors"
             }}
             />
             )}
-            {/* <Text style={AddRecipeStyles.addphotoText}>Add Photo</Text> */}
+            
         </TouchableOpacity>
         </>
     )

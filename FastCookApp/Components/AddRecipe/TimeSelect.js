@@ -6,33 +6,43 @@ import { useDispatch, useSelector } from "react-redux"
 import { GetTimes } from "../../Redux/Slices/TimeAsyncThunk"
 
 
- export const TimeSelect = ({timeValue, setTimeValue,style}) =>{
-    const {time} = useSelector(state=>state.time)
+ export const TimeSelect = ({timeValue, setTimeValue,style, timeId,setTimeId }) =>{
+    const {dataTime} = useSelector(state=>state.dataTime)
    
     // const countries = ["Egypt", "Canada", "Australia", "Ireland"]
     const dispatch = useDispatch()
         useEffect(()=>{
         dispatch(GetTimes())
    }, [])
-   console.log("tiiimeee",time)
+   console.log("tiiimeee",dataTime)
    console.log("time val", timeValue);
+   console.log("time id", timeId);
    
    
  
     return(
         <>
     
-        <Text>{time?.error}</Text>
+        
         <SelectDropdown
         buttonStyle={style}
-        data={time}
+        data={dataTime.map(item => item.time)}
         defaultButtonText="Time"
         buttonTextStyle={{fontSize: 25, color: "grey"}}
 
     
-	onSelect={(selectedItem, index) => {
-		console.log(selectedItem, index)
-	}}
+        onSelect={(selectedItem, index) => {
+            dataTime.forEach((item)=>{
+                if( selectedItem === item.time){
+                    setTimeId(item.id)
+                }
+               
+                
+            })
+        
+            
+        }}
+
 	buttonTextAfterSelection={(selectedItem, index) => {
 		 return(
             setTimeValue(selectedItem),

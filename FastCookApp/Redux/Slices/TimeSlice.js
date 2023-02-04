@@ -7,6 +7,7 @@ const initialState = {
     error: ' ',
     time: [],
     id: [],
+    dataTime: [],
     token: null,
 }
 
@@ -23,7 +24,8 @@ const TimeSlice = createSlice({
         [GetTimes.fulfilled]: (state,action) =>{
             state.loading = false,
             state.successTime = true,
-            state.time = action.payload
+            state.time = action.payload,
+            state.dataTime = action.payload
         },
         [GetTimes.rejected]:(state,action) =>{
             state.loading = false,

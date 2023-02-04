@@ -7,41 +7,56 @@ import { GetCategory } from "../../Redux/Slices/CategoryAsyncThunck"
 
 
 
- export const CategorySelect = ({categoryValue,setCategoryValue,style}) =>{
-    const {category} = useSelector(state => state.category)
+ export const CategorySelect = ({categoryValue,setCategoryValue,style,categoryid, setCategoryId }) =>{
+  const {data} = useSelector(state => state.data)
+    
     const dispatch = useDispatch()
         useEffect(()=>{
         dispatch(GetCategory())
    }, [])
-   console.log("category",category)
+
    console.log("category val", categoryValue);
-   
+   console.log("dataaaaaaaaaaaaa", data);
+   console.log("idddd_final_fianl", categoryid);
    
  
     return(
         <>
-    <SelectDropdown
-    buttonStyle={style}
-	data={category}
-    defaultButtonText="Category"
-    buttonTextStyle={{fontSize: 25, color:"grey"}}
-
+        
+        <SelectDropdown
+        buttonStyle={style}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+        defaultButtonText="Category"
+        buttonTextStyle={{fontSize: 25, color:"grey"}}
     
-	onSelect={(selectedItem, index) => {
-		console.log(selectedItem, index)
-	}}
-	buttonTextAfterSelection={(selectedItem, index) => {
-		 return(
-            setCategoryValue(selectedItem),
-            selectedItem
-         )
-    }}
-	rowTextForSelection={(item, index) => {
-	    return item
-    }}
-    
-    />
+        
+        onSelect={(selectedItem, index) => {
+            data.forEach((item)=>{
+                if( selectedItem === item.name){
+                    setCategoryId(item.id)
+                }
+               
+                
+            })
+        
+            
+        }}
 
+        buttonTextAfterSelection={(selectedItem, index) => {
+             return(
+        
+            
+                setCategoryValue(selectedItem),
+                selectedItem
+             )
+        }}
+        rowTextForSelection={(item, index) => {
+            return item
+        }}
+        
+        />
+    
+   
+ 
     </>
     )
 }

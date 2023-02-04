@@ -4,15 +4,16 @@ import { TouchableOpacity } from "react-native-gesture-handler"
 import SelectDropdown from 'react-native-select-dropdown'
 import { useDispatch, useSelector } from "react-redux"
 import { GetIngridient } from "../../Redux/Slices/GetIngridientsAsynckThunck"
-export const IngridientSelect = ({ingValue, setIngValue,style}) =>{
+export const IngridientSelect = ({ingValue, setIngValue,style, ingridientId, setIngridientId}) =>{
     const {getIngrigient} = useSelector(state=>state.getIngrigient)
     
     const dispatch = useDispatch()
         useEffect(()=>{
             dispatch(GetIngridient())
    }, [])
-   console.log("ingridient" ,getIngrigient)
+   console.log("ingridientssssssss" ,getIngrigient)
     console.log("ingVal", ingValue);
+    console.log("choseId", ingridientId)
    
    
  
@@ -20,13 +21,21 @@ export const IngridientSelect = ({ingValue, setIngValue,style}) =>{
         <>
     <SelectDropdown
     buttonStyle={style}
-	data={getIngrigient}
+    data={getIngrigient.map(item => item.name)}
     defaultButtonText="Ingridient"
     buttonTextStyle={{fontSize: 25, color: "grey"}}
     
 	onSelect={(selectedItem, index) => {
-		console.log(selectedItem, index)
-	}}
+        getIngrigient.forEach((item)=>{
+            if( selectedItem === item.name){
+                setIngridientId(item.id)
+            }
+           
+            
+        })
+    
+        
+    }}
 	buttonTextAfterSelection={(selectedItem, index) => {
 		 return(
             setIngValue(selectedItem),

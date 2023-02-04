@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react-test-renderer";
 import { GetCategory } from "./CategoryAsyncThunck";
 
 const initialState = {
@@ -6,6 +7,7 @@ const initialState = {
     successCategory:false,
     error: ' ',
     category: [],
+    data: [],
     id: [],
     token: null,
 }
@@ -23,7 +25,9 @@ const CategorySlice = createSlice({
         [GetCategory.fulfilled]: (state,action) =>{
             state.loading = false,
             state.successCategory = true,
-            state.category = action.payload
+            state.data = action.payload
+            // state.category = action.payload.name
+            // state.id = action.payload.id
         },
         [GetCategory.rejected]:(state,action) =>{
             state.loading = false,

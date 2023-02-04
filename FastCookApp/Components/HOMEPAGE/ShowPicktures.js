@@ -6,7 +6,10 @@ import {
   FlatList,
   TouchableOpacity,
   Image,
+  Dimensions
 } from 'react-native';
+
+import Carousel from 'react-native-reanimated-carousel';
 import {renderTrendListData} from './DataTrendList';
 import {Colors} from '../Colors';
 import {useNavigation} from '@react-navigation/native';
@@ -42,12 +45,14 @@ const Item = ({image, id, body, title}) => {
 };
 
 const ShowPicktures = () => {
+  const width = Dimensions.get('window').width;
   const renderItem = ({item}) => (
-    <Item title={item.title} image={item.image} body={item.body} id={item.id} />
+    <Item title={item.title} image={item.image} body={item.body} id={item.id} style={{marginHorizontal: 1}}/>
   );
   return (
-    <>
-    <Text>Categoris</Text>
+    <View>
+      <View>
+    <Text style={{fontSize: 25, color: "grey", margin: 5 }}>Categoris</Text>
     <SafeAreaView style={styles.container}>
       <View
         style={{
@@ -56,17 +61,26 @@ const ShowPicktures = () => {
           justifyContent: 'center',
         }}>
           
-        <FlatList
-          layout={'default'}
-          data={renderTrendListData({height: 180, width: 200, borderRadius: 30})}
-          horizontal={true}
-          sliderWidth={300}
-          itemWith={300}
-          renderItem={renderItem}
-        />
+          <Carousel
+          loop
+          width={width*0.82}
+          height={width /2}
+          autoPlay={true}
+           data={renderTrendListData({height: 190, width: 300, borderRadius: 30, marginHorizontal: 1})}
+           
+           mode= "parallax"
+            parallaxScrollingScale={0.9}
+            parallaxScrollingOffset = {60}
+            scrollAnimationDuration={1000}
+           onSnapToItem={(index) => console.log('current index:', index)}
+           renderItem={renderItem}
+          
+          />
+       
       </View>
     </SafeAreaView>
-    </>
+    </View>
+    </View>
   );
 };
 
@@ -78,9 +92,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.backgroundGrey,
     borderRadius: 20,
 
-    height: 270,
+    height: 300,
     width: 250,
-    marginVertical: 15,
+    marginVertical: 10,
     marginHorizontal: 0,
   },
   title: {

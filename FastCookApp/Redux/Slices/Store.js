@@ -9,6 +9,7 @@ import TimeSlice from './TimeSlice';
 import CategorySlice from './CategorySlice';
 import IngridientCreateSlice from './IngridientSlice';
 import GetIngridientSlice from './GetIngridientSlice';
+import CreateNewRecipeSlice from './CreateNewRecipeSlice';
 export const store = configureStore({
     reducer:{
         user: UserSlice,
@@ -18,9 +19,12 @@ export const store = configureStore({
         avatarStore: AvatarSlice,
         signUp: SignUpSlice,
         time: TimeSlice,
-        category: CategorySlice,
         ingridientCtreate: IngridientCreateSlice,
         getIngrigient: GetIngridientSlice,
+        dataTime: TimeSlice,
+        data: CategorySlice,
+        createNewRecipe: CreateNewRecipeSlice
+        
         
     }
 })

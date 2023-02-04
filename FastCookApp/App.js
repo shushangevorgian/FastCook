@@ -19,6 +19,8 @@ import AddRecipe from "./Components/AddRecipe/AddRecipe.js";
 import VerifyCode from './Components/SignUpPage/VerifyCode.';
 import ShowEachPage from './Components/HOMEPAGE/ShowEachRecipe';
 import { AddIngridient } from './Components/AddRecipe/AddIngridientPage';
+import SearchPage from './Components/HOMEPAGE/SearchPage';
+import MainPageSmartSearch from './Components/HOMEPAGE/SmartSearch/MainPage';
 const Tab = createBottomTabNavigator();
 
 const Drawer = createDrawerNavigator();
@@ -99,6 +101,8 @@ const App = () =>{
         <Stack.Screen name='verifyCode' component={VerifyCode} />
         <Stack.Screen name = 'showEachPage' component={ShowEachPage}/>
         <Stack.Screen name='addIngridient' component={AddIngridient}/>
+        <Stack.Screen name = 'searchPage' component={SearchPage}/>
+        <Stack.Screen name = 'mainSmartSearch' component={MainPageSmartSearch}/>
       </Stack.Navigator>
     </NavigationContainer>
     </Provider>

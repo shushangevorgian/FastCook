@@ -16,3 +16,8 @@ export const GetIngridientListRequest = () => {
     console.log("request ingridient");
     return instanseLogin.get('/recipe/ingredients?page=')
 }
+
+export const CreateNewRecipeRequest = (data) => {
+    console.log(data, "create recipe data");
+    return instanseLogin.post('/recipe', data)
+}

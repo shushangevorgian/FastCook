@@ -35,7 +35,8 @@ export const AddRecipeStyles = StyleSheet.create({
     },
     description:{
         margin:5,
-        alignContent:"flex-start",
+        alignItems: "baseline",
+        // alignContent:"flex-start",
         height: 150,
         borderColor: "black", 
         backgroundColor: Colors.boxGrey

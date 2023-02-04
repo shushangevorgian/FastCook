@@ -6,25 +6,85 @@ import { CategorySelect } from "./CategorySelect"
 import { IngridientCreateButton } from "./IngridientsCreateButton"
 import { IngridientSelect } from "./IngridientSelect"
 import { AddPhoto } from "./AddPhoto"
+import { useDispatch } from "react-redux"
+import { CreateNewRecipe } from "../../Redux/Slices/CreateNewRecipeAsyncThunck"
 const AddRecipe = () =>{
+    const dispatch = useDispatch()
+    const [image, setImage] = useState("");
     const [timeValue, setTimeValue] = useState('')
     const [categoryValue,setCategoryValue] = useState('')
     const [ingValue, setIngValue] = useState('')
     const [description, setTescription] = useState('')
+    const [error, setError] = useState({field: '', message: ''})
+    const [categoryid, setCategoryId] = useState('')
+    const [timeId, setTimeId] = useState('')
+    const [ingridientId, setIngridientId] = useState('')
+
+    const onPress = () =>{
+        const loginError = {field: '', message: ''}
+        if (timeValue === ''){
+            loginError.field = "timeValue";
+            loginError.message = 'this field is required'
+            setError(loginError)
+        }
+        else if (categoryValue === ''){
+            loginError.field = "categoryValue";
+            loginError.message = "this field is required"
+            setError(loginError)
+        }
+        else if(ingValue === '') {
+            loginError.field = "ingValue";
+            loginError.message = "this field is required"
+            setError(loginError)
+        }else if (description === ''){
+            loginError.field = "description";
+            loginError.message = "this field is required"
+            setError(loginError)
+        }
+        // }else if(description.length <= 50){
+        //     loginError.field = "description"
+        //     loginError.message = "moreee"
+        //     setError(loginError)
+        // }
+        else{
+            console.log("ok, create");
+            dispatch(CreateNewRecipe({categoryValue, categoryid, timeId, ingridientId, description, image}))
+        }
+    }
     return(
         <View style={AddRecipeStyles.mainView}>
-        <AddPhoto/>
+        <AddPhoto image={image} setImage={setImage}/>
       
         <View style={{marginVertical: 4, width:"auto"}}>
-            <TimeSelect  timeValue={timeValue} setTimeValue= {setTimeValue} style={AddRecipeStyles.select}/>
+            <TimeSelect 
+            timeId={timeId}
+            setTimeId={setTimeId}
+             timeValue={timeValue} setTimeValue= {setTimeValue} style={AddRecipeStyles.select}/>
         </View>
+        {error.field === "timeValue" && (
+            <Text style={{fontSize: 16, color: "red"}}>{error.message}</Text>
+        )}
         <View>
-            <CategorySelect categoryValue = {categoryValue} setCategoryValue={setCategoryValue} style={AddRecipeStyles.select}/>
+            <CategorySelect
+            categoryid={categoryid}
+            setCategoryId={setCategoryId}
+             categoryValue = {categoryValue} setCategoryValue={setCategoryValue} style={AddRecipeStyles.select}/>
         </View>
+        {error.field === "categoryValue" && (
+            <Text style={{fontSize: 16, color: "red"}}>{error.message}</Text>
+        )}
         <View style={{flexDirection: "row",width: "auto", marginVertical: 4}}>
-            <IngridientSelect ingValue={ingValue} setIngValue={setIngValue} style={AddRecipeStyles.ingridientSelect}/>
+            <IngridientSelect 
+            ingridientId={ingridientId}
+            setIngridientId={setIngridientId}
+            ingValue={ingValue} 
+            setIngValue={setIngValue} 
+            style={AddRecipeStyles.ingridientSelect}/>
            <IngridientCreateButton style={AddRecipeStyles.createBtn}/> 
         </View>
+        {error.field === "ingValue" && (
+            <Text style={{fontSize: 16, color: "red"}}>{error.message}</Text>
+        )}
         <View>
             
         </View>
@@ -37,14 +97,17 @@ const AddRecipe = () =>{
         multiline={true}
         
       />
-    
+    {error.field === "description" && (
+            <Text style={{fontSize: 16, color: "red"}}>{error.message}</Text>
+        )}
        
         <TouchableOpacity
         style={AddRecipeStyles.btn}
+        onPress={() => {onPress()}}
         >
             <Text
             style={AddRecipeStyles.btnText}
-            >Save</Text>
+            >Create</Text>
         </TouchableOpacity>
         </View>
     )
