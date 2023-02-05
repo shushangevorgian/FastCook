@@ -11,7 +11,7 @@ export const GetCategory = createAsyncThunk('category', async function(){
         // const id = response.data[0].map((item) => item.id)
         // console.log(name, "idissssss")
         // return {name:name,  }
-        console.log("final data", response.data[0])
+        console.log("final data category", response.data[0])
         return response.data[0]
     }
     catch(error){

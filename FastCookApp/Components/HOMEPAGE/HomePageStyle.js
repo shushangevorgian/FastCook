@@ -13,7 +13,7 @@ export const HomePageStyle = StyleSheet.create({
     },
     inputView:{
             flexDirection: "row",
-            padding: 15
+            // padding: 15
         
     },
     input:{
@@ -22,6 +22,7 @@ export const HomePageStyle = StyleSheet.create({
         borderWidth: 2,
         width: 270,
         height: 35,
+        paddingHorizontal: 20
                 
     },
 

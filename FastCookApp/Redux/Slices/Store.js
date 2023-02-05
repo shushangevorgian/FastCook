@@ -10,6 +10,7 @@ import CategorySlice from './CategorySlice';
 import IngridientCreateSlice from './IngridientSlice';
 import GetIngridientSlice from './GetIngridientSlice';
 import CreateNewRecipeSlice from './CreateNewRecipeSlice';
+import filterSearchSlice from './filterSearchSlice';
 export const store = configureStore({
     reducer:{
         user: UserSlice,
@@ -23,7 +24,8 @@ export const store = configureStore({
         getIngrigient: GetIngridientSlice,
         dataTime: TimeSlice,
         data: CategorySlice,
-        createNewRecipe: CreateNewRecipeSlice
+        createNewRecipe: CreateNewRecipeSlice,
+        filterSearch: filterSearchSlice
         
         
     }

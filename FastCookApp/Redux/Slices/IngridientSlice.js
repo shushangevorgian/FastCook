@@ -3,7 +3,7 @@ import { CreateIngridient } from "./CreateIngidientAsynckThunck";
 
 const initialState = {
     loading: true,
-    successIngridientCtreate:false,
+    success:false,
     error: ' ',
     ingridientCtreate: {},
   
@@ -22,12 +22,12 @@ const IngridientCreateSlice = createSlice({
         },
         [CreateIngridient.fulfilled]: (state,action) =>{
             state.loading = false,
-            state.successCategory = true,
+            state.success = true,
             state.ingridientCtreate = action.payload
         },
         [CreateIngridient.rejected]:(state,action) =>{
             state.loading = false,
-            state.successIngridientCtreate = false,
+            state.success = false,
             state.error = action.error.message
         }
 

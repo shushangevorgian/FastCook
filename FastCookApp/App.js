@@ -43,13 +43,14 @@ function MyTabs() {
           iconName = focused
             //'<ion-icon name="home-outline"></ion-icon>'
             //<ion-icon name="person-outline"></ion-icon>
-            ? 'ios-information-circle'
-            : 'ios-information-circle-outline';
+           
+            ? 'home'
+            : 'home-outline';
         } else if (route.name === 'SAVE') {
-          iconName = focused ? 'ios-list' : 'ios-list-outline';
+          iconName = focused ? 'bookmark' : 'bookmark-outline';
         }
         else{
-          iconName = focused ? 'ios-list' : 'ios-list-outline';
+          iconName = focused ? 'person' : 'person-outline';
         }
 
 

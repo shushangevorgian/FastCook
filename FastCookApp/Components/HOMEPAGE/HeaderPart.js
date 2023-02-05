@@ -37,7 +37,7 @@ const goToImages = () =>{
                 height:60,
                 width: 60,
                 borderRadius: 100,
-                backgroundColor: 'green'
+                backgroundColor: 'grey'
             }}
             onPress={() =>{
             goToImages()

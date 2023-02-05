@@ -1,12 +1,3 @@
-// import { Text } from "@rneui/base";
-// export const AddIngridient = () => {
-//     return(
-//         <Text>adddnew ingridient</Text>
-
-
-//     )
-// }
-
 import {Text, ImageBackground, View, TouchableOpacity} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import {Formik, Form, Field} from 'formik';
@@ -18,6 +9,8 @@ import { MyInput } from '../Inputs';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { CreateIngridient } from '../../Redux/Slices/CreateIngidientAsynckThunck';
+import { BackgroundImage } from '@rneui/base';
+import { CreatIngStyle } from './CreateIngStyle';
 const CreateIngridientSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too Short!')
@@ -34,29 +27,28 @@ const CreateIngridientSchema = Yup.object().shape({
 
  export const AddIngridient = () => {
   
-
+  const ingridientCtreate = useSelector(state=>state.ingridientCtreate)
   const dispatch = useDispatch()
   const navigation = useNavigation()
-
-  // useEffect(()=>{
-  //   console.log(LoginError.success,"succcccses")
-  //   if(LoginError.success){
-  //     navigation.navigate("loggedInHomePage")
-  //   }
-    
-  // },[])
-//   useEffect(() => {
-//     console.log("success");
-//     if(LoginError.success === true){
-//         navigation.navigate("loggedInHomePage")
-//     }
+  useEffect(() => {
+    console.log("success");
+    if(ingridientCtreate.success === true){
+        navigation.navigate("addRecipe")
+        console.log("sucescc ingridient",ingridientCtreate.success )
+    }
   
-//   },[LoginError.success])
+  },[ingridientCtreate.success])
+
   return (
     <>
       
-        <View >
-          <Text >Create ingridient</Text>
+       
+          <BackgroundImage
+          style={CreatIngStyle.container}
+          source={require("./Img/ing3.jpg")}
+          >
+            
+          <Text style={CreatIngStyle.title}>Create ingridient</Text>
           <Formik
             initialValues={{name: '', calories: ''}}
             validationSchema={CreateIngridientSchema}
@@ -88,20 +80,24 @@ const CreateIngridientSchema = Yup.object().shape({
                   
                   ))}
                 </View>
+                <Text style={{color: "red"}}>{ingridientCtreate?.error}</Text>
                 <TouchableOpacity
+                style={CreatIngStyle.btn}
                   onPress={() => {
                     props.handleSubmit()
                   }}
                   >
-                  <Text >Create</Text>
+                  <Text
+                  style={CreatIngStyle.btnText}
+                  >Create</Text>
                 </TouchableOpacity>
               </>
             )}
           </Formik>
-
           
+          </BackgroundImage>
           
-        </View>
+        
      
     </>
   );

@@ -24,7 +24,9 @@ const TimeChoicePart = ({searchTimeValue, setSearchTimeValue, searchTimeId, setS
         multiselect={true}
         buttonStyle={{ width: "auto",
         height: 40,
-        backgroundColor: Colors.boxGrey}}
+        backgroundColor: Colors.boxGrey,
+        marginVertical:4
+    }}
         data={dataTime.map(item => item.time)}
         defaultButtonText="Time"
         buttonTextStyle={{fontSize: 25, color: "grey"}}

@@ -9,6 +9,7 @@ export const GetIngridient = createAsyncThunk('getIngrigient', async function(){
         // console.log(response.data[0].map((item) => item.name));
         // return response.data[0].map((item) => item.name)
         //         // console.log(response, "ressp");
+        console.log("response", response.data[0])
         return response.data[0]
     }
     catch(error){

@@ -4,50 +4,56 @@ import { TouchableOpacity } from "react-native-gesture-handler"
 import SelectDropdown from 'react-native-select-dropdown'
 import { useDispatch, useSelector } from "react-redux"
 import { GetIngridient } from "../../Redux/Slices/GetIngridientsAsynckThunck"
-export const IngridientSelect = ({ingValue, setIngValue,style, ingridientId, setIngridientId}) =>{
+import { MultipleSelectList } from 'react-native-dropdown-select-list'
+import { Colors } from "../Colors"
+export const IngridientSelect = ({ingValue, setIngValue, style, ingridientId, setIngridientId}) =>{
     const {getIngrigient} = useSelector(state=>state.getIngrigient)
-    
+    const ids = []
     const dispatch = useDispatch()
         useEffect(()=>{
             dispatch(GetIngridient())
    }, [])
    console.log("ingridientssssssss" ,getIngrigient)
     console.log("ingVal", ingValue);
-    console.log("choseId", ingridientId)
+     console.log("choseId", ingridientId)
    
    
  
     return(
         <>
-    <SelectDropdown
-    buttonStyle={style}
+       
+         <View  style={{flex: 1, paddingHorizontal: 20,   marginLeft: 0, backgroundColor: Colors.boxGrey}} > 
+    <MultipleSelectList 
+    label="Ingredient"
+    
+    boxStyles={{backgroundColor: Colors.boxGrey, borderColor: Colors.boxGrey, borderRadius:0, marginVertical: 4 }}
     data={getIngrigient.map(item => item.name)}
-    defaultButtonText="Ingridient"
-    buttonTextStyle={{fontSize: 25, color: "grey"}}
+    //defaultButtonText="Ingridient"
+    //buttonTextStyle={{fontSize: 25, color: "grey"}}
     
-	onSelect={(selectedItem, index) => {
-        getIngrigient.forEach((item)=>{
-            if( selectedItem === item.name){
-                setIngridientId(item.id)
-            }
-           
-            
-        })
     
+	setSelected={(selectedItem, index) => {
+  
+        setIngValue(selectedItem)
         
     }}
-	buttonTextAfterSelection={(selectedItem, index) => {
-		 return(
-            setIngValue(selectedItem),
-            selectedItem
-         )
+    onSelect={()=>{
+        ingValue.map((item)=>{
+            console.log("name", item);
+            getIngrigient.map((ing)=>{
+                if(item === ing.name){
+                    
+                    ids.push(ing.id)
+                    console.log("yes" ,ing.id);
+                    console.log("ids", ids);
+                    setIngridientId(ids)
+                }
+            })
+        })
+        
     }}
-	rowTextForSelection={(item, index) => {
-	    return item
-    }}
-    
     />
-
+</View>
     </>
     )
 }

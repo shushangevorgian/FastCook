@@ -13,12 +13,12 @@ const AddRecipe = () =>{
     const [image, setImage] = useState("");
     const [timeValue, setTimeValue] = useState('')
     const [categoryValue,setCategoryValue] = useState('')
-    const [ingValue, setIngValue] = useState('')
+    const [ingValue, setIngValue] = useState([])
     const [description, setTescription] = useState('')
     const [error, setError] = useState({field: '', message: ''})
     const [categoryid, setCategoryId] = useState('')
     const [timeId, setTimeId] = useState('')
-    const [ingridientId, setIngridientId] = useState('')
+    const [ingridientId, setIngridientId] = useState([])
 
     const onPress = () =>{
         const loginError = {field: '', message: ''}
@@ -73,13 +73,14 @@ const AddRecipe = () =>{
         {error.field === "categoryValue" && (
             <Text style={{fontSize: 16, color: "red"}}>{error.message}</Text>
         )}
-        <View style={{flexDirection: "row",width: "auto", marginVertical: 4}}>
+        <View style={{flexDirection: "row", marginVertical: 4}}>
             <IngridientSelect 
             ingridientId={ingridientId}
             setIngridientId={setIngridientId}
             ingValue={ingValue} 
             setIngValue={setIngValue} 
-            style={AddRecipeStyles.ingridientSelect}/>
+            
+            />
            <IngridientCreateButton style={AddRecipeStyles.createBtn}/> 
         </View>
         {error.field === "ingValue" && (

@@ -5,7 +5,7 @@ export const DataForCreateIngridients = [
         id:1,
         name:"name",
         value: "name",
-        icon: <Icon name="user" size={30} color="white"/>,
+        icon: <Icon name="shoppingcart" size={30} color="white"/>,
         placeholder: "name"
         
        
@@ -15,7 +15,7 @@ export const DataForCreateIngridients = [
         id:2,
         name:"calories",
         value: "calories",
-        icon: <Icon name="lock" size={30} color="white"/>,
+        icon: <Icon name="inbox" size={30} color="white"/>,
         placeholder: "calories"
         
     },

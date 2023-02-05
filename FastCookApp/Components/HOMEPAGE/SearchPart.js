@@ -13,6 +13,7 @@ const SearchPart = () =>{
             >
            <Text style={HomePageStyle.iconSearch}> <Icon name="search" size={25} color="gray"  /></Text>
             <TextInput
+            
             style={HomePageStyle.input} 
             placeholder="SEARCH"
             placeholderTextColor="gray"        
