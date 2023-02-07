@@ -10,10 +10,10 @@ import {
 } from 'react-native';
 
 import Carousel from 'react-native-reanimated-carousel';
-import {renderTrendListData, renderTrendListData2} from './DataTrendList';
+import { renderTrendListData, renderTrendListData2 } from '../HOMEPAGE/DataTrendList';
 import {Colors} from '../Colors';
 import {useNavigation} from '@react-navigation/native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native';
 
 const Item = ({image, id, body, title}) => {
   const navigation = useNavigation();
@@ -39,29 +39,36 @@ const Item = ({image, id, body, title}) => {
         <Text>{image}</Text>
       </View>
         </TouchableOpacity>
+        
       </View>
+      
     </View>
+
+    
     </>
   );
 };
 
-const ShowPicktures = () => {
+const ShowPickturesWhitoutLogin = () => {
   const width = Dimensions.get('window').width;
   const renderItem = ({item}) => (
     <Item title={item.title} image={item.image} body={item.body} id={item.id} style={{marginHorizontal: 1}}/>
-  );
+    
+    );
   return (
    
   
-    <ScrollView>
-         <Text style={{fontSize: 25, fontWeight: "bold", alignSelf: "baseline" }}>Categories</Text>
+    <ScrollView 
+    style={{backgroundColor: Colors.boxGrey}}
+    >
+         <Text style={{fontSize: 25, alignSelf: "baseline" }}>Categories</Text>
           <Carousel
           
-          style={{ height:200, shadowColor: Colors.gray}}
+          style={{ height:200, shadowColor: Colors.orange, shadowOpacity:0, shadowOffset:20}}
           loop
           width={width*0.89} 
           height={width/2}
-          //autoPlay={true}
+          autoPlay={true}
           autoPlayReverse={true}
            data={renderTrendListData2({height:190 , width: 300, borderRadius: 30, marginHorizontal: 1})}
            
@@ -73,15 +80,15 @@ const ShowPicktures = () => {
            renderItem={renderItem}
           
           />
-          <View style={{shadowColor: "grey", borderBottomColor:Colors.boxGrey, borderTopWidth: 0.5}}></View>
-          <Text style={{fontSize: 25, fontWeight: "bold", }}>Trend</Text>
+          {/* <View style={{shadowColor: "grey", borderBottomColor:Colors.boxGrey, borderTopWidth: 0.5}}></View> */}
+          <Text style={{fontSize: 25,}}>Trend</Text>
           <Carousel
           
-          style={{ height:200,}}
+          style={{ height:500}}
           loop
           width={width*0.89} 
           height={width}
-          //autoPlay={true}
+          autoPlay={true}
            data={renderTrendListData({height:190 , width: 300, borderRadius: 30, marginHorizontal: 1})}
            
            mode= "parallax"
@@ -150,4 +157,4 @@ const styles = StyleSheet.create({
   // },
 });
 
-export default ShowPicktures;
+export default ShowPickturesWhitoutLogin;

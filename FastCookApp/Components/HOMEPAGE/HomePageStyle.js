@@ -13,23 +13,27 @@ export const HomePageStyle = StyleSheet.create({
     },
     inputView:{
             flexDirection: "row",
+            // justifyContent: "space-between"
             // padding: 15
         
     },
     input:{
+     
+        fontSize:14,
         borderRadius: 20,
         borderColor: "gray",
         borderWidth: 2,
         width: 270,
         height: 35,
-        paddingHorizontal: 20
+        paddingTop: 10,
+        paddingRight: 50,
+       
                 
     },
 
     iconSearch:{
-        margin: 4,
+        marginRight: 25,
+       
     },
-    iconFillter:{
-        margin: 5
-    }
+  
 })

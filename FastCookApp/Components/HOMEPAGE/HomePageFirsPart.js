@@ -3,7 +3,7 @@ import { Styles } from "../Styles/HomePageFirstPart";
 import { useNavigation } from "@react-navigation/native";
 import Texts from "./Texts";
 import Icon from "react-native-vector-icons/FontAwesome";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons"
+
 const HomePageFirsPart = () =>{
     const navigation = useNavigation()
     return (
@@ -27,7 +27,7 @@ const HomePageFirsPart = () =>{
             
             <TouchableOpacity
             onPress= {() =>{
-                navigation.navigate('loggedInHomePage')
+                navigation.navigate('mainHomePage')
             }}
             style={Styles.button}>
                    <Text

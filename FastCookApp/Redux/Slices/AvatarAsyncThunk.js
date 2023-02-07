@@ -16,7 +16,7 @@ export const SetAvatar = createAsyncThunk('avatar', async function (imagePath) {
     console.log('success', response);
     return Promise.resolve('success');
   } catch (error) {
-    console.log('error riased', error);
+    console.log('error============', error);
     // return Promise.reject(error.response.data)
   }
 });
