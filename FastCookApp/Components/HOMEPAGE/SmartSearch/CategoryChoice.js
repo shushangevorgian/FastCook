@@ -7,7 +7,7 @@ import StepIndicator from 'react-native-step-indicator';
 import { useDispatch, useSelector } from "react-redux";
 import { GetCategory } from "../../../Redux/Slices/CategoryAsyncThunck";
 import { Colors } from "../../Colors";
-
+import Icon from "react-native-vector-icons/AntDesign"
 const CategoryChoiceChoicePart = ({searchCategory,setSearchCaegory,searchCategoryId, setSearchCategoryId}) =>{
     const {data} = useSelector(state => state.data)
     
@@ -20,6 +20,13 @@ const CategoryChoiceChoicePart = ({searchCategory,setSearchCaegory,searchCategor
     return(
         <>
     <SelectDropdown
+     renderDropdownIcon={()=> {
+        return (
+            <Icon name="down" size={15} color="gray" />
+        )
+            
+        
+    }}
         multiselect={true}
         buttonStyle={{ width: "auto",
         height: 40,

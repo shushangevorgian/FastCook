@@ -35,7 +35,7 @@ const SavePage = () =>{
             There are no recipes saved yet!
 
             </Text>
-            {/* <TouchableOpacity
+            <TouchableOpacity
             style={{
                 marginTop: 20,
                 alignContent: "center",
@@ -48,7 +48,7 @@ const SavePage = () =>{
                 <Text>
                     Go back
                 </Text>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
             </View>
 
 

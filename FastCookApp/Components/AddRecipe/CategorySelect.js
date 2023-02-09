@@ -4,7 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler"
 import SelectDropdown from 'react-native-select-dropdown'
 import { useDispatch, useSelector } from "react-redux"
 import { GetCategory } from "../../Redux/Slices/CategoryAsyncThunck"
-
+import Icon from "react-native-vector-icons/AntDesign"
 
 
  export const CategorySelect = ({categoryValue,setCategoryValue,style,categoryid, setCategoryId }) =>{
@@ -24,6 +24,13 @@ import { GetCategory } from "../../Redux/Slices/CategoryAsyncThunck"
         <>
         
         <SelectDropdown
+        renderDropdownIcon={()=> {
+            return (
+                <Icon name="down" size={15} color="gray" />
+            )
+                
+            
+        }}
          buttonStyle={style}
         data={data.map(item => item.name)}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
         defaultButtonText="Category"

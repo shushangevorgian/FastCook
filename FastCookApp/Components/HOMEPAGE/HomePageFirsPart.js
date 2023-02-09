@@ -27,7 +27,8 @@ const HomePageFirsPart = () =>{
             
             <TouchableOpacity
             onPress= {() =>{
-                navigation.navigate('mainHomePage')
+                navigation.navigate('loggedInHomePage')
+                // navigation.navigate('mainHomePage')
             }}
             style={Styles.button}>
                    <Text

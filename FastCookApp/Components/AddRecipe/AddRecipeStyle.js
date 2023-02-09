@@ -29,13 +29,15 @@ export const AddRecipeStyles = StyleSheet.create({
         backgroundColor: Colors.boxGrey
     },
     createBtn:{
-        
+        alignContent: "center",
+        justifyContent: "center",
+        alignItems: 'center',
         marginRight:0,
         backgroundColor: Colors.boxGrey
     },
     description:{
-        margin:5,
-        alignItems: "baseline",
+        
+        
         // alignContent:"flex-start",
         height: 150,
         borderColor: "black", 

@@ -13,12 +13,13 @@ import {Colors} from "../../Colors"
     },
     titleText:{
         color: "grey",
-        fontSize: 28,
+        fontSize: 32,
         // alignSelf: "flex-start"
     },
     imageComponent:{
-        marginLeft: 20,
-        marginVertical: 50,
+        marginLeft: 10,
+        // marginLeft: 20,
+        // marginVertical: 50,
         borderRadius: 30,
         margin: 3,    
         // height: 120,
@@ -26,12 +27,30 @@ import {Colors} from "../../Colors"
     },
     
     bodyText:{
-        marginVertical: 50,
+        marginVertical: 10,
         marginHorizontal: 5,
-        fontSize: 16,
+        fontSize: 20,
         color: "grey",
         justifyContent: "flex-start",
         alignContent: "flex-start",
+    },
+    btn:{
+        margin: 5,
+        backgroundColor: Colors.orange,
+        borderRadius: 5,
+        width: 300,
+        height: 48,
+        alignSelf: "center",
+        justifyContent: "center",
+        alignContent: "center",
+    },
+    btnText:{
+        color: "grey",
+        fontSize: 20,
+        fontWeight: "bold",
+        textAlign: "center",
+        justifyContent: "center",
+        alignSelf: "center"
     }
 
 }) 

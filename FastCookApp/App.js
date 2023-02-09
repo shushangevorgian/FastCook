@@ -61,7 +61,7 @@ function MyTabs() {
         
         return <Ionicons name={iconName} size={size} color={color} />;
       },
-      tabBarActiveTintColor: 'tomato',
+      tabBarActiveTintColor: 'orange',
       tabBarInactiveTintColor: 'gray',
     })}
    
@@ -76,9 +76,9 @@ function DrawerNav() {
   return (
     <>
     
-    <Drawer.Navigator screenOptions={{headerShown: false }}  >
+    <Drawer.Navigator screenOptions={{headerShown: false, drawerActiveBackgroundColor: "Grey", drawerContentStyle: "red"}}>
     
-    <Drawer.Screen name="home" component={HomePageFirsPart} />
+    <Drawer.Screen name="home" component={HomePageFirsPart} tabBarStyle={{color: "green"}}/>
        <Drawer.Screen name="Login" component={Login} />
        <Drawer.Screen name="SignUp" component={SignUp} />   
     </Drawer.Navigator>

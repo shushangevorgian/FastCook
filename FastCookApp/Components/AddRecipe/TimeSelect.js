@@ -4,11 +4,12 @@ import { TouchableOpacity } from "react-native-gesture-handler"
 import SelectDropdown from 'react-native-select-dropdown'
 import { useDispatch, useSelector } from "react-redux"
 import { GetTimes } from "../../Redux/Slices/TimeAsyncThunk"
-
+import Icon from "react-native-vector-icons/AntDesign"
+import { useNavigation } from "@react-navigation/native"
 
  export const TimeSelect = ({timeValue, setTimeValue,style, timeId,setTimeId }) =>{
     const {dataTime} = useSelector(state=>state.dataTime)
-   
+   const navigation = useNavigation()
     // const countries = ["Egypt", "Canada", "Australia", "Ireland"]
     const dispatch = useDispatch()
         useEffect(()=>{
@@ -25,6 +26,14 @@ import { GetTimes } from "../../Redux/Slices/TimeAsyncThunk"
     
         
         <SelectDropdown
+        renderDropdownIcon={()=> {
+            return (
+                <Icon name="down" size={15} color="gray" />
+            )
+                
+            
+        }}
+
         buttonStyle={style}
         data={dataTime.map(item => item.time)}
         defaultButtonText="Time"
