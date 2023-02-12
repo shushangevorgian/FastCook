@@ -38,10 +38,12 @@ export const AddRecipeStyles = StyleSheet.create({
     description:{
         
         
-        // alignContent:"flex-start",
+        alignContent:"flex-start",
+       
         height: 150,
         borderColor: "black", 
-        backgroundColor: Colors.boxGrey
+        backgroundColor: Colors.boxGrey,
+        
     },
     btn:{
         margin: 5,

@@ -19,7 +19,14 @@ const Item = ({image, id, body, title}) => {
   const navigation = useNavigation();
   return (
     <>
-    
+    <View 
+    style={{margin: 5}}
+    >
+    <Text
+    style={{fontSize: 18}}
+    >{title}</Text>
+
+    </View>
     <View style={styles.item}>
       
       {/* <View style={{height: 200, width:270,}}><Image  source= {{uri: image}} style={{height: 200, width:270,}}/></View> */}
@@ -37,10 +44,13 @@ const Item = ({image, id, body, title}) => {
           }}>
           <View style={styles.imageComponent}>
         <Text>{image}</Text>
+    
       </View>
         </TouchableOpacity>
       </View>
     </View>
+   
+    
     </>
   );
 };
@@ -53,17 +63,19 @@ const ShowPicktures = () => {
   return (
    
   
-    <ScrollView>
+    <View
+  
+    >
          <Text style={{fontSize: 25, fontWeight: "bold", alignSelf: "baseline" }}>Categories</Text>
           <Carousel
           
           style={{ height:200, shadowColor: Colors.gray}}
           loop
           width={width*0.89} 
-          height={width/2}
+          height={width/3}
           //autoPlay={true}
           autoPlayReverse={true}
-           data={renderTrendListData2({height:190 , width: 300, borderRadius: 30, marginHorizontal: 1})}
+           data={renderTrendListData2({height:180 , width: 300, borderRadius: 30, marginHorizontal: 1})}
            
            mode= "parallax"
             parallaxScrollingScale={0.9}
@@ -75,14 +87,17 @@ const ShowPicktures = () => {
           />
           <View style={{shadowColor: "grey", borderBottomColor:Colors.boxGrey, borderTopWidth: 0.5}}></View>
           <Text style={{fontSize: 25, fontWeight: "bold", }}>Trend</Text>
+          <View
+         
+          >
           <Carousel
           
           style={{ height:200,}}
           loop
           width={width*0.89} 
-          height={width}
+          height={width/3}
           //autoPlay={true}
-           data={renderTrendListData({height:190 , width: 300, borderRadius: 30, marginHorizontal: 1})}
+           data={renderTrendListData({height:180 , width: 300, borderRadius: 30, marginHorizontal: 1})}
            
            mode= "parallax"
             parallaxScrollingScale={0.9}
@@ -92,7 +107,8 @@ const ShowPicktures = () => {
            renderItem={renderItem}
           
           />
-          </ScrollView>
+          </View>
+          </View>
        
       
 

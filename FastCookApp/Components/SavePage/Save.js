@@ -1,7 +1,9 @@
+import { useNavigation } from "@react-navigation/native"
 import {Text, View, ImageBackground,} from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
 
 const SavePage = () =>{
+    const  navigation = useNavigation()
     return(
         <ImageBackground
         style={{
@@ -36,19 +38,29 @@ const SavePage = () =>{
 
             </Text>
             <TouchableOpacity
-            style={{
-                marginTop: 20,
-                alignContent: "center",
-                alignItems: 'center',
-                borderRadius: 5,
-                backgroundColor: "orange",
-                justifyContent: "center"
-            }}
-            >
-                <Text>
-                    Go back
-                </Text>
-            </TouchableOpacity>
+                onPress={() =>{
+                    navigation.navigate('HOME')
+                }}
+                 style={{
+                    margin: 5,
+                 backgroundColor:"orange",
+                 borderRadius: 5,
+                 width: 90,
+                 height: 30,
+                 alignSelf: "center",
+                 justifyContent: "center",
+                 alignContent: "center",
+                 }}
+                >
+                    <Text
+                    style={{color: "white",
+                    fontSize: 16,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                    justifyContent: "center",
+                    alignSelf: "center"}}
+                    >Go Back</Text>
+                </TouchableOpacity>
             </View>
 
 

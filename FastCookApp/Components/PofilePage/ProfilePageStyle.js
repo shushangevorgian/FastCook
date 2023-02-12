@@ -27,7 +27,7 @@ export const ProfileStyles = StyleSheet.create({
         width: 60,
         height:60,
         borderRadius: 100,
-        backgroundColor: "green",
+        backgroundColor: "gray",
         margin: 2
     },
     title:{

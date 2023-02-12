@@ -16,7 +16,7 @@ const MainSearchPage = () =>{
                 <TextInput
                 value={searchValue}
                 onChange={value => setSearchValue(value)}
-                style={{marginLeft: 10,
+                style={{margin: 2,
                      margin:5,backgroundColor: "#E5E5E5",
                       paddingRight: 230, 
                       borderColor: Colors.boxGrey, 
@@ -30,7 +30,7 @@ const MainSearchPage = () =>{
                     dispatch(GetSearchResult(searchValue))
                 }}
                 style={{backgroundColor:"#FABF7B", 
-                marginRight: 30,  
+                
                 width: 75, 
                 height: 40,
                 borderRadius: 10, 

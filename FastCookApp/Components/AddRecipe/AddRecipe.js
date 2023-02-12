@@ -8,7 +8,10 @@ import { IngridientSelect } from "./IngridientSelect"
 import { AddPhoto } from "./AddPhoto"
 import { useDispatch } from "react-redux"
 import { CreateNewRecipe } from "../../Redux/Slices/CreateNewRecipeAsyncThunck"
+import { useNavigation } from "@react-navigation/native"
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 const AddRecipe = () =>{
+    const navigation = useNavigation()
     const dispatch = useDispatch()
     const [image, setImage] = useState("");
     const [timeValue, setTimeValue] = useState('')
@@ -52,6 +55,7 @@ const AddRecipe = () =>{
         }
     }
     return(
+        <KeyboardAwareScrollView>
         <View style={AddRecipeStyles.mainView}>
         <AddPhoto image={image} setImage={setImage}/>
       
@@ -89,6 +93,7 @@ const AddRecipe = () =>{
         <View>
             
         </View>
+
         <Text  style={{fontSize: 20, color: "gray", fontWeight: "bold"}}>Description</Text>
        <TextInput
         style={AddRecipeStyles.description}
@@ -96,6 +101,7 @@ const AddRecipe = () =>{
         value={description}
         
         multiline={true}
+
         
       />
     {error.field === "description" && (
@@ -104,13 +110,17 @@ const AddRecipe = () =>{
        
         <TouchableOpacity
         style={AddRecipeStyles.btn}
-        onPress={() => {onPress()}}
+        // onPress={() => {onPress()}}
+        onPress={() => {
+            navigation.navigate('verificationpage')
+        }}
         >
             <Text
             style={AddRecipeStyles.btnText}
             >Create</Text>
         </TouchableOpacity>
         </View>
+        </KeyboardAwareScrollView>
     )
 }
 
