@@ -3,7 +3,7 @@ import {TouchableOpacity, TextInput, View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Colors } from './Colors';
 import {StylesLogin} from './LoginPage/LoginPageStyle';
-export const MyInput = ({name, onChangeText, placeholder, value, error, touched, type, icon, color= "gray",secureTextEntry}) => {
+export const MyInput = ({style, name, onChangeText, placeholder, value, error, touched, type, icon, color= "gray",secureTextEntry}) => {
   return (
     <View
     style={{
@@ -35,7 +35,7 @@ export const MyInput = ({name, onChangeText, placeholder, value, error, touched,
     <TextInput
      secureTextEntry={secureTextEntry}
     placeholderTextColor={color}
-    style={StylesLogin.inputField}
+    style={style}
       onChangeText={onChangeText}
       value={value}
       name={name}

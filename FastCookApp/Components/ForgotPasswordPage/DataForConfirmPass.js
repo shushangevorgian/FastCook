@@ -6,6 +6,6 @@ export const DataConfirm = [
         value: "token",
         type: "number",
         icon: <Icons name="user" size={30} color="gray"/>,
-        placeholder: "token"
+        placeholder: "Code"
     },
 ]

@@ -19,7 +19,7 @@ import AddRecipe from "./Components/AddRecipe/AddRecipe.js";
 import VerifyCode from './Components/SignUpPage/VerifyCode.';
 import ShowEachPage from './Components/HOMEPAGE/ShowEachRecipe';
 import { AddIngridient } from './Components/AddRecipe/AddIngridientPage';
-import SearchPage from './Components/HOMEPAGE/SearchPage';
+import SearchPageResult from './Components/HOMEPAGE/SearchPageResult';
 import MainPageSmartSearch from './Components/HOMEPAGE/SmartSearch/MainPage';
 import MainHomePage from './Components/HomePageWhitoutLogin/MainPage';
 import MainSearchPage from './Components/HOMEPAGE/Searchmainpage';
@@ -106,7 +106,7 @@ const App = () =>{
         <Stack.Screen name='verifyCode' component={VerifyCode} />
         <Stack.Screen name = 'showEachPage' component={ShowEachPage}/>
         <Stack.Screen name='addIngridient' component={AddIngridient}/>
-        <Stack.Screen name = 'searchPage' component={SearchPage}/>
+        <Stack.Screen name = 'searchPageResult' component={SearchPageResult}/>
         <Stack.Screen name = 'mainSmartSearch' component={MainPageSmartSearch}/>
         <Stack.Screen name='mainHomePage' component={MainHomePage} />
         <Stack.Screen name = 'mainSearchPage' component={MainSearchPage} />

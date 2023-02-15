@@ -32,13 +32,6 @@ console.log(LoginError,'Error')
   const dispatch = useDispatch()
   const navigation = useNavigation()
 
-  // useEffect(()=>{
-  //   console.log(LoginError.success,"succcccses")
-  //   if(LoginError.success){
-  //     navigation.navigate("loggedInHomePage")
-  //   }
-    
-  // },[])
   useEffect(() => {
     console.log("success");
     if(LoginError.success === true){
@@ -71,6 +64,7 @@ console.log(LoginError,'Error')
                 <View>
                   {DataforInputs.map(item => (
                     <MyInput
+                      style={StylesLogin.inputField}
                       name={item.name}
                       value={props.values[item.value]}
                       onChangeText={props.handleChange(item.name)}

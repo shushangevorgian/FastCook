@@ -90,6 +90,7 @@ const SignUp = () =>{
             {DataSignUpPage.map((item)=>(
              
                 <MyInput
+                    style={StlesSignUp.textInput}
                     name={item.name}
                     value={props.values[item.value]}
                     onChangeText={props.handleChange(item.name)}

@@ -32,7 +32,8 @@ export const StylesLogin = StyleSheet.create({
         backgroundColor: Colors.gray,
         borderBottomColor: Colors.borderColor,
         // borderBottomWidth: 2,
-        fontSize: 18,
+        fontSize: 22,
+        color: "white"
     
         // margin: 12,
     },

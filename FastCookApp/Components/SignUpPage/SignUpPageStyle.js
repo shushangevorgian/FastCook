@@ -72,5 +72,9 @@ export const StlesSignUp = StyleSheet.create({
     StlesSignUp:{
         fontSize: 18,
         color: Colors.LightSalmon
+    },
+    textInput:{
+        fontSize: 18,
+        color: '#575757 '
     }
 })

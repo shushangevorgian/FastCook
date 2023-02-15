@@ -2,16 +2,12 @@ import { StyleSheet } from "react-native";
 import { Colors } from "../Colors";
 export const ConfirmStyles = StyleSheet.create({
     container:{
-
         backgroundColor: Colors.gray,
         flex: 1,
         alignContent: "center",
-    
-
-    
     },
     imageView: {
-        margin: 90,
+        margin: 50,
         alignContent: "center",
         alignItems: "center",
         justifyContent: "center",
@@ -21,9 +17,9 @@ export const ConfirmStyles = StyleSheet.create({
         fontSize: 28,
         fontWeight: "bold",
         color: Colors.lightGray,
-        textAlign: "center"
+        textAlign: "center",
+        
     },
-    
     input:{
         margin: 10,
         alignSelf: "center",
@@ -61,13 +57,21 @@ export const ConfirmStyles = StyleSheet.create({
         
     },
     inputsView:{
-        margin:10
+        margin:10,
+        marginVertical: 15
     },
     titleText:{
         textAlign: "center",
         fontSize: 25,
         fontWeight: "bold"
 
+    },
+    textInput:{
+        fontSize: 18,
+        color: '#575757'
+    },
+    FormikView:{
+        margin: 5
     }
     
 })

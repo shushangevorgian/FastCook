@@ -52,6 +52,7 @@ const  ForgotPassword = () =>{
                 <View>
                   {DataForgotEmail.map(item => (
                     <MyInput
+                    style={ConfirmStyles.textInput}
                       name={item.name}
                       value={props.values[item.value]}
                       onChangeText={props.handleChange(item.name)}
@@ -68,7 +69,8 @@ const  ForgotPassword = () =>{
                 <TouchableOpacity
                   onPress={() => {
                     props.handleSubmit()
-                   
+                    ////delete
+                    // navigation.navigate('confirmPass')
                     }}
                   style={StylesLogin.button}>
                   <Text style={StylesLogin.btnText}>SEND</Text>

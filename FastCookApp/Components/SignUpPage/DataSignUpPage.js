@@ -16,7 +16,7 @@ export const DataSignUpPage = [
         value: "name",
         type: "name",
         placeholder: "name",
-        icon: <Icons name="lock" size={30} color="gray"/>,
+        icon: <Icons name="user" size={30} color="gray"/>,
       
         
 

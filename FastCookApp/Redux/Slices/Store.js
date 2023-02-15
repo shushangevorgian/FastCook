@@ -27,7 +27,8 @@ export const store = configureStore({
         data: CategorySlice,
         createNewRecipe: CreateNewRecipeSlice,
         filterSearch: filterSearchSlice,
-        getSearchResult: SearchSlice
+        getSearchResult: SearchSlice,
+        loadingSearch: SearchSlice
         
         
     }

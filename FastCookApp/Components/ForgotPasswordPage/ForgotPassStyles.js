@@ -60,7 +60,9 @@ export const ForgotPassStyles = StyleSheet.create({
     btnImageView:{
         margin:5,
         width: 500,
-        height:300
+        height:300,
+        marginBottom: 0,
+        marginTop: 50
     },
     btnImage:{
         //alignContent:"center",

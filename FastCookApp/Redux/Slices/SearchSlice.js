@@ -4,7 +4,7 @@ import { GetSearchResult } from "./SearchAsyncThunk";
 
 const initialState = {
     getSearchResult:[],
-    loading: true,
+    loadingSearch: true,
     success:false,
     error: ' ',
     errorSignUpPage: [],
