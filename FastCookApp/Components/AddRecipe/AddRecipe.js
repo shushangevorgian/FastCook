@@ -110,10 +110,10 @@ const AddRecipe = () =>{
        
         <TouchableOpacity
         style={AddRecipeStyles.btn}
-        // onPress={() => {onPress()}}
-        onPress={() => {
-            navigation.navigate('verificationpage')
-        }}
+        onPress={() => {onPress()}}
+        // onPress={() => {
+        //     //navigation.navigate('verificationpage')
+        // }}
         >
             <Text
             style={AddRecipeStyles.btnText}

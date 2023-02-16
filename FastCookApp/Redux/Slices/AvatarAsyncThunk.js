@@ -13,7 +13,7 @@ export const SetAvatar = createAsyncThunk('avatar', async function (imagePath) {
     });
     console.log('form data ', formData);
     const response = await AvatarRequest(formData);
-    console.log('success', response);
+    console.log('success==============', response.data);
     return Promise.resolve('success');
   } catch (error) {
     console.log('error============', error);

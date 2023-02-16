@@ -5,7 +5,7 @@ export const DataNewPass = [
         name: "password",
         value: "password",
         type: "password",
-        icon: <Icons name="user" size={30} color="gray"/>,
+        icon: <Icons name="lock" size={30} color="gray"/>,
         placeholder: "Enter a new password"
     },
     // {

@@ -4,6 +4,7 @@ import HeaderPart from './HeaderPart';
 import SearchPart from './SearchPart';
 import ShowPicktures from './ShowPicktures';
 const LoggedInHomePage = () => {
+  
   return (
     <View
       style={{ backgroundColor: Colors.backgroundGrey }}

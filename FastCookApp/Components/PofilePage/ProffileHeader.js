@@ -3,7 +3,9 @@ import ImagePicker from "react-native-image-crop-picker"
 import {ProfileStyles} from "./ProfilePageStyle.js";
 import { useNavigation } from "@react-navigation/native"
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useSelector } from "react-redux";
 export const ProfileHeader = () =>{
+const username = useSelector(state=>state.user.username)
 const navigation = useNavigation()
 const logOut = () => {
       AsyncStorage.clear()
@@ -37,7 +39,7 @@ const showPictures = () =>{
             <Text
             style = {ProfileStyles.title}
             >
-                Name LastName
+                {username}
             </Text>
             <TouchableOpacity
             style={ProfileStyles.logOutBtn}

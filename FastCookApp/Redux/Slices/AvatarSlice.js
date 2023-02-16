@@ -18,9 +18,9 @@ export const AvatarSlice = createSlice({
     },
     [SetAvatar.fulfilled]: (state, action) =>{
         state.loading = false
-        //state.user = action.payload
+       
         state.success = true
-        //state.image = action.payload.image.path
+        
     },
     [SetAvatar.rejected]: (state, action) => {
         state.success = false,

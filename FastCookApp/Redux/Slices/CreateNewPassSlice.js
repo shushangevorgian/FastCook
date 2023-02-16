@@ -6,7 +6,7 @@ const initialState = {
     error: ' ',
     token: null,
     messages: [],
-    password: ""
+    password: {}
 }
 export const CreateNewPassForLogin = createSlice({
     name: 'CreatePass',

@@ -24,6 +24,7 @@ import MainPageSmartSearch from './Components/HOMEPAGE/SmartSearch/MainPage';
 import MainHomePage from './Components/HomePageWhitoutLogin/MainPage';
 import MainSearchPage from './Components/HOMEPAGE/Searchmainpage';
 import Verificationpage from './Components/PofilePage/VerificationPage';
+import ResultShowPage from './Components/HOMEPAGE/SmartSearch/ResultShowPage';
 //import HomePageWhitoutLogin from './Components/HOMEPAGE/WhitoutLogin/HomePageWhitoutLogin';
 const Tab = createBottomTabNavigator();
 
@@ -111,6 +112,7 @@ const App = () =>{
         <Stack.Screen name='mainHomePage' component={MainHomePage} />
         <Stack.Screen name = 'mainSearchPage' component={MainSearchPage} />
         <Stack.Screen name='verificationpage' component={Verificationpage}/>
+        <Stack.Screen name='resultShowPage' component={ResultShowPage} />
        </Stack.Navigator>
     </NavigationContainer>
     </Provider>

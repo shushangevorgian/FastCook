@@ -95,15 +95,20 @@ export const ConfirmForgotCode = createAsyncThunk(
   },
 );
 ///////////////?????????????
-export const CreateNewPassLogin = createAsyncThunk('createPass', async function (token, {data}) {
+export const CreateNewPassLogin = createAsyncThunk('createPass', async function (token, data) {
+    console.log(token, 'took')
     console.log(data.password, 'createeee');
     try {
-      const response = await createNewPassRequest( token, {password: data.password});
+      const response = await createNewPassRequest( token,  data.password);
+      console.log(response)
+
       return {
         data: {
-            password: response.data.password
-        }
+            password: response.data
+        },
+        
     }
+
       
     } catch (error) {
       return Promise.reject(error.response.data.message);

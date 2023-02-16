@@ -9,6 +9,7 @@ import { SetAvatar } from "../../Redux/Slices/AvatarAsyncThunk"
 const HeaderPart = () =>{
 const [image, setImage] = useState("");
 const AvatarError = useSelector(state => state.avatarStore)
+const username = useSelector(state=>state.user.username)
 const dispath = useDispatch()
 const goToImages = () =>{
   console.log("opening");
@@ -30,7 +31,7 @@ const goToImages = () =>{
         style={HomePageStyle.container}
         >
 
-            <Text>Name LastName</Text>
+            <Text>{username}</Text>
             <Text>{AvatarError?.error}</Text>
             <TouchableOpacity
             style= {{

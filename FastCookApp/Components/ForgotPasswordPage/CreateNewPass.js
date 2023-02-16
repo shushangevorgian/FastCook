@@ -42,6 +42,7 @@ const CreateNewPass = () => {
             <View>
               {DataNewPass.map(item => (
                 <MyInput
+                  style={ConfirmStyles.textInput}
                   name={item.name}
                   value={props.values[item.value]}
                   onChangeText={props.handleChange(item.name)}

@@ -52,12 +52,14 @@ const MainSearchPage = () =>{
                     justifyContent: "center",
                     alignSelf: "center"}}
                     >Search</Text>
+
+                    {/* {<Text>no seach recipe</Text>} */}
                     </TouchableOpacity>    
              </View>
 
 
             {/* <SearchPageResult /> */}
-           {/* {loadingSearch == true ? <Text style= {{fontSize: 22,margin: 20}}>Loading.......</Text>:null} */}
+           {loadingSearch == true ? <Text style= {{fontSize: 22,margin: 20}}>Loading.......</Text>:null}
              </>
         
     )

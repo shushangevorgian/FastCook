@@ -56,7 +56,8 @@ const MainPageSmartSearch = () =>{
         // }
         else{
             console.log("ok, create");
-            dispatch(FilterSearch({searchCategoryId,ingredientChoiceid,searchTimeId }))
+           // dispatch(FilterSearch({searchCategoryId,ingredientChoiceid,searchTimeId }))
+            navigation.navigate('resultShowPage')
         }
     }
     
@@ -95,7 +96,8 @@ const MainPageSmartSearch = () =>{
         </View>
         <TouchableOpacity
         style={AddRecipeStyles.btn}
-        onPress={() => {onPress()}}
+        // onPress={() => {onPress()}}
+        onPress={() =>  navigation.navigate('resultShowPage')}
         >
             <Text
             style={AddRecipeStyles.btnText}
