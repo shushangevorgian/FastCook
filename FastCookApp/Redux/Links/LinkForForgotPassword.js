@@ -7,7 +7,7 @@ export const forgotConfirmRequest = data => {
   return instanseLogin.post('/user/verify_password', data);
 };
 
-export const createNewPassRequest = (token, data) => {
+export const createNewPassRequest = (token, password) => {
   console.log('pasToken', token);
-  return instanseLogin.post(`/user/reset_password?token=${token}`, data);
+  return instanseLogin.post(`/user/reset_password?token=${token}`, password);
 };

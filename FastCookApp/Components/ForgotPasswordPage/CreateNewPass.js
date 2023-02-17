@@ -35,7 +35,10 @@ const CreateNewPass = () => {
         validationSchema={CreateNewPassSchema}
         onSubmit={values => {
           console.log('tokVals', values);
-          dispatch(CreateNewPassLogin(token, values));
+          dispatch(CreateNewPassLogin({
+            ...values,
+            token: token
+            }));
         }}>
         {props => (
           <>
@@ -58,7 +61,7 @@ const CreateNewPass = () => {
             <TouchableOpacity
               onPress={() => {
                 props.handleSubmit();
-                navigation.navigate('Login');
+                //navigation.navigate('Login');
               }}
               style={ConfirmStyles.btnView}>
               <Text style={ConfirmStyles.btnText}>Confirm</Text>
