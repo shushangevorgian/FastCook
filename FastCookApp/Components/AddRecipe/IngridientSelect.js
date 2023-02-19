@@ -15,7 +15,7 @@ export const IngridientSelect = ({ingValue, setIngValue, style, ingridientId, se
    }, [])
    console.log("ingridientssssssss" ,getIngrigient)
     console.log("ingVal", ingValue);
-     console.log("choseId", ingridientId)
+     console.log("choseId===========", ingridientId)
    
    
  
@@ -43,10 +43,10 @@ export const IngridientSelect = ({ingValue, setIngValue, style, ingridientId, se
             getIngrigient.map((ing)=>{
                 if(item === ing.name){
                     
-                    ids.push(ing.id)
+                    // ids.push(ing.id)
                     console.log("yes" ,ing.id);
-                    console.log("ids", ids);
-                    setIngridientId(ids)
+                    // console.log("ids", ids);
+                    setIngridientId(ing.id)
                 }
             })
         })

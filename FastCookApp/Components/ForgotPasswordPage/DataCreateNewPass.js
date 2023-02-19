@@ -6,14 +6,7 @@ export const DataNewPass = [
         value: "password",
         type: "password",
         icon: <Icons name="lock" size={30} color="gray"/>,
-        placeholder: "Enter a new password"
+        placeholder: "Enter a new password",
+        secureTextEntry: true,
     },
-    // {
-    //     id:1,
-    //     name: "confirmPassword",
-    //     value: "confirmPassword",
-    //     type: "confirmPassword",
-    //     icon: <Icons name="user" size={30} color="gray"/>,
-    //     placeholder: "confirm new password"
-    // },
 ]

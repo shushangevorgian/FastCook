@@ -3,8 +3,8 @@ import {GetToken} from './AsyncStorage';
 export const instanseLogin = axios.create({
   // baseURL: 'http://34.107.8.120',
   // baseURL: 'http://192.168.2.102:3022'
-  // baseURL: 'http://116.203.128.127:4500/'
-  baseURL:'http://192.168.2.101:3024'
+  baseURL: 'http://116.203.128.127:4500/'
+  // baseURL:'http://192.168.2.101:3024'
 });
 
 export const LoginRequest = data => {

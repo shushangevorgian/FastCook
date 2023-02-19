@@ -67,7 +67,7 @@ export const ConfirmStyles = StyleSheet.create({
 
     },
     textInput:{
-        fontSize: 18,
+        fontSize: 20,
         color: '#575757'
     },
     FormikView:{

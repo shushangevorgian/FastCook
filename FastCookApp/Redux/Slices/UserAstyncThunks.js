@@ -27,6 +27,9 @@ export const LoginPage = createAsyncThunk('user', async function (data) {
       SetToken(userData);
       SetDataLogin(userData);
     }
+    return userData.user
+    // console.log("dataaaaaaaaaaa", userData.user.username)
+   
   } catch (error) {
     return Promise.reject(error.response.data);
   }
@@ -96,11 +99,11 @@ export const ConfirmForgotCode = createAsyncThunk(
 );
 ///////////////?????????????
 export const CreateNewPassLogin = createAsyncThunk('createPass', async function (data) {
-    console.log(token, 'took')
-    console.log(data.password, 'createeee');
+    console.log(data.token, 'token')
+    console.log(data.password, 'newpass');
     try {
-      const response = await createNewPassRequest( data.token,  data.password);
-      console.log(response)
+      const response = await createNewPassRequest( data.token,  {password: data.password});
+      console.log(response, "============resssss")
       return Promise.resolve(response.data)
 
       

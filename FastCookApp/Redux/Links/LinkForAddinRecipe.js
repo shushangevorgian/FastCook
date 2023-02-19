@@ -19,5 +19,11 @@ export const GetIngridientListRequest = () => {
 
 export const CreateNewRecipeRequest = (data) => {
     console.log(data, "create recipe data");
-    return instanseLogin.post('/recipe', data)
+    return instanseLogin.post('/recipe', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      })
+   
 }
+

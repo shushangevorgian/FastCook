@@ -5,42 +5,32 @@ import { useNavigation } from "@react-navigation/native"
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useSelector } from "react-redux";
 export const ProfileHeader = () =>{
-const username = useSelector(state=>state.user.username)
+
+const username = useSelector(state=>state.user)
 const navigation = useNavigation()
 const logOut = () => {
       AsyncStorage.clear()
       navigation.navigate('Login')
 }
 /////add dispatch part
-const showPictures = () =>{
-    ImagePicker.openPicker({
-        width: 300,
-        height: 400,
-        cropping: true
-      }).then(image => {
-        console.log("image", image);
+// const showPictures = () =>{
+//     ImagePicker.openPicker({
+//         width: 300,
+//         height: 400,
+//         cropping: true
+//       }).then(image => {
+//         console.log("image", image);
         
         
-      });
-}
+//       });
+// }
         return (
            <View
            style = {ProfileStyles.headerVew}
            >
-            <TouchableOpacity
-            style={ProfileStyles.imageButton}
-            onPress={() =>{
-                showPictures()
-                console.log("selected!")
-               }}
-            >
-
-            </TouchableOpacity>
-            <Text
-            style = {ProfileStyles.title}
-            >
-                {username}
-            </Text>
+            <Text style={{fontSize: 28, color: "orange", fontWeight: "bold", alignSelf: "center"}}>{username.user.username}</Text>
+           
+            
             <TouchableOpacity
             style={ProfileStyles.logOutBtn}
             onPress = {() => {

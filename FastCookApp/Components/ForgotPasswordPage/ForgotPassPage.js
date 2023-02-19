@@ -16,7 +16,7 @@ import { StylesLogin } from "../LoginPage/LoginPageStyle";
 import { useSelector } from 'react-redux';
 const ForgotPasswordSchema = Yup.object().shape({
     email: Yup.string()
-    .email("")
+    .email("Required valid email")
     .required('Required valid email'),
     
   });

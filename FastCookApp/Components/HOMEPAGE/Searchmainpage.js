@@ -9,7 +9,8 @@ import SearchPageResult from "./SearchPageResult"
 const MainSearchPage = () =>{
     const [searchValue,setSearchValue] = useState('')
     const {loadingSearch} = useSelector(state=>state.loadingSearch)
-    console.log(searchValue, "yehh");
+    console.log("loading===============",loadingSearch);
+    console.log(searchValue, "searchValue");
     const dispatch = useDispatch()
     return (
         <>
@@ -34,6 +35,7 @@ const MainSearchPage = () =>{
                 <TouchableOpacity
                 onPress={()=>{
                     dispatch(GetSearchResult(searchValue))
+                //    { <Text  style={{color: "red"}}>hello</Text>}
                 }}
                 style={{backgroundColor:"#FABF7B", 
                 
@@ -44,6 +46,7 @@ const MainSearchPage = () =>{
                 justifyContent: "center",
                 alignContent: "center",}}
                 >
+                    
                     <Text
                     style={{ color: "grey",
                     fontSize: 20,
@@ -52,14 +55,15 @@ const MainSearchPage = () =>{
                     justifyContent: "center",
                     alignSelf: "center"}}
                     >Search</Text>
-
+                         
                     {/* {<Text>no seach recipe</Text>} */}
                     </TouchableOpacity>    
+                    
              </View>
 
 
             {/* <SearchPageResult /> */}
-           {loadingSearch == true ? <Text style= {{fontSize: 22,margin: 20}}>Loading.......</Text>:null}
+          
              </>
         
     )

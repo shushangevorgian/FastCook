@@ -28,7 +28,8 @@ export const store = configureStore({
         createNewRecipe: CreateNewRecipeSlice,
         filterSearch: filterSearchSlice,
         getSearchResult: SearchSlice,
-        loadingSearch: SearchSlice
+        loadingSearch: SearchSlice,
+        loadingSearch: SearchSlice,
         
         
     }

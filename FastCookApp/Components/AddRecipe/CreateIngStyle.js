@@ -10,6 +10,10 @@ export const CreatIngStyle = StyleSheet.create({
         alignContent: "center"
         
     },
+    textinput:{
+        color: "white",
+        fontSize: 20,
+    },
     title:{
         color:Colors.orange,
         fontSize: 30,

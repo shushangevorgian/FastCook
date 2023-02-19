@@ -19,7 +19,7 @@ const SignupSchema = Yup.object().shape({
       .max(50, 'Too Long!')
       .required('Required'),
     email: Yup.string()
-      .email("")
+      .email("Required valid email")
       .required('Required valid email'),
     phone: Yup.number()
       .min(50, 'Too Short!')

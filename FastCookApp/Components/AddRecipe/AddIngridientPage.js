@@ -67,6 +67,7 @@ const CreateIngridientSchema = Yup.object().shape({
                 <View>
                   {DataForCreateIngridients.map(item => (
                     <MyInput
+                    style={CreatIngStyle.textinput}
                       name={item.name}
                       value={props.values[item.value]}
                       onChangeText={props.handleChange(item.name)}
